@@ -12,6 +12,19 @@
     </div>
 </nav>
 
+<script>
+    const nav = document.querySelector('.nav-bar-content');
+    if(nav !== null) {
+        const navLinks = nav.querySelectorAll('a');
+        const currentURL = window.location.href;
+        navLinks.forEach((link) => {
+            if(link.href === currentURL) {
+                link.classList.add("active");
+            }
+        });
+    }
+</script>
+
 <style>
     nav {
         display: flex;
@@ -44,5 +57,8 @@
     }
     li {
         margin: 10px 0;
+    }
+    li a.active {
+        color: var(--brown-own);
     }
 </style>
