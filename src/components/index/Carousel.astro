@@ -10,12 +10,69 @@ let images = [
 ];
 ---
 
-<div class="carousel-container">
-  {images.map((image) => <CarouselElement imgName={image} />)}
+<div class="carousel-container" id="carousel">
+  {images.map((image, index) => (
+    <>
+    <CarouselElement imgName={image} />
+    {index === 2 && 
+      <div class="titular-container">
+        <p class="carousel-titular">
+          B<br>A<br>J<br>A<br><br>P<br>A<br>R<br>A<br><br>D<br>E<br>S<br>C<br>U<br>B<br>R<br>I<br>R<br><br>M<br>Á<br>S
+        </p>
+      </div>}
+    </>
+  ))}
 </div>
 
+<client:only>
+  <script>
+    const carousel = document.getElementById('carousel');
+    let isDown = false;
+    let startX: number = 0;
+    let scrollLeft: number = 0;
+    if (carousel != null) {
+      carousel.addEventListener('mousedown', (e: MouseEvent) => {
+        console.log("downn");
+        isDown = true;
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+      });
+    
+      carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+      });
+    
+      carousel.addEventListener('mouseup', () => {
+        isDown = false;
+      });
+    
+      carousel.addEventListener('mousemove', (e: MouseEvent) => {
+        console.log("move");
+        if (isDown == true) {
+
+          e.preventDefault();
+          const x = e.pageX - carousel.offsetLeft;
+          const walk = (x - startX) * 3; //scroll-fast
+          console.log(scrollLeft - walk);
+          carousel.scrollLeft = scrollLeft - walk;
+        }
+      }); 
+    }
+  </script>
+</client:only>
+
 <style>
-  .carousel-container {
-    display: flex;
-  }
+.carousel-container {
+  display: flex;
+}
+.titular-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-right: 20px;
+}
+.carousel-titular {
+  font-size: 20px;
+  font-weight: 500;
+}
 </style>
