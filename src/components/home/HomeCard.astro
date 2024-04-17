@@ -1,0 +1,13 @@
+---
+import { Image } from 'astro:assets';
+
+export interface Props {
+    imgUrl: string;
+}
+
+const {imgUrl} = Astro.props;
+---
+
+<div class="card-container">
+    <Image src={imgUrl} alt="a" width={500} height={400} />
+</div>

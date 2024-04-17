@@ -1,15 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Carousel from '../components/index/Carousel.astro';
+import Carousel from '../components/home/Carousel.astro';
+import HomeCard from '../components/home/HomeCard.astro';
 ---
 
 <Layout title="Home">
-	<Carousel>
+	<Carousel />
+	<div class="section">
+		<HomeCard imgUrl='/1.jpg'/>
+		<div class="middle-section">
+			<h3>Nuestros Proyectos</h3>
+			<p>Puedes encontrar la mejor muebleria del mercado para tu proyecto residencial como para tu apartamento.</p>
+			<p><span>Empecemos!</span></p>
+		</div>
+		<HomeCard imgUrl='/2.jpg'/>
+	</div>
 </Layout>
 
 <style>
 	body {
 		width: 100%;
 		height: 100vh;
+		display: block;
 	}
 </style>
