@@ -1,23 +1,21 @@
 ---
 import CarouselElement from "./CarouselElement.astro";
 let images = [
-	'../../public/carousel/1.svg',
-	'../../public/carousel/2.svg',
-	'../../public/carousel/3.svg',
-	'../../public/carousel/4.svg',
-	'../../public/carousel/5.svg',
-	'../../public/carousel/6.svg',
-]
+  "/carousel/1.svg",
+  "/carousel/2.svg",
+  "/carousel/3.svg",
+  "/carousel/4.svg",
+  "/carousel/5.svg",
+  "/carousel/6.svg",
+];
 ---
 
 <div class="carousel-container">
-    {images.map((image) => (
-        <CarouselElement imgName={image}/>
-    ))}
+  {images.map((image) => <CarouselElement imgName={image} />)}
 </div>
 
 <style>
-    .carousel-container {
-        display: flex;
-    }
+  .carousel-container {
+    display: flex;
+  }
 </style>
