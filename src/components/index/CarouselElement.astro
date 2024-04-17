@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 export interface Props {
   imgName: string;
 }
@@ -7,14 +8,16 @@ const { imgName } = Astro.props;
 ---
 
 <div class="element-container">
-    <img src={imgName} alt="" />
+    <Image src={imgName} alt="a" width={500} height={400} decoding="async" format='avif'>
 </div>
 
 <style>
 .element-container {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+
     max-height: 100vh;
     width: 380px;
-    background-color: antiquewhite;
     margin-right: 20px;
     transition: .6s ease;
 }

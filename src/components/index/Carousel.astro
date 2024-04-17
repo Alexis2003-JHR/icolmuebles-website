@@ -1,12 +1,12 @@
 ---
 import CarouselElement from "./CarouselElement.astro";
 let images = [
-  "/carousel/1.svg",
-  "/carousel/2.svg",
-  "/carousel/3.svg",
-  "/carousel/4.svg",
-  "/carousel/5.svg",
-  "/carousel/6.svg",
+  "/1.jpg",
+  "/2.jpg",
+  "/3.jpg",
+  "/4.jpg",
+  "/5.jpg",
+  "/6.jpg",
 ];
 ---
 
@@ -32,7 +32,6 @@ let images = [
     let scrollLeft: number = 0;
     if (carousel != null) {
       carousel.addEventListener('mousedown', (e: MouseEvent) => {
-        console.log("downn");
         isDown = true;
         startX = e.pageX - carousel.offsetLeft;
         scrollLeft = carousel.scrollLeft;
@@ -47,13 +46,10 @@ let images = [
       });
     
       carousel.addEventListener('mousemove', (e: MouseEvent) => {
-        console.log("move");
         if (isDown == true) {
-
           e.preventDefault();
           const x = e.pageX - carousel.offsetLeft;
-          const walk = (x - startX) * 3; //scroll-fast
-          console.log(scrollLeft - walk);
+          const walk = (x - startX) * 1;
           carousel.scrollLeft = scrollLeft - walk;
         }
       }); 
@@ -64,6 +60,10 @@ let images = [
 <style>
 .carousel-container {
   display: flex;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 50%;
 }
 .titular-container {
   display: flex;
