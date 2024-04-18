@@ -24,25 +24,24 @@ const contentMap = {
 ---
 
 <Layout title="Home">
-  <div class="main-container">
-    <section><Carousel /></section>
+  <section><Carousel /></section>
 
-    <section>
-      <HomeCard imgUrl="/home/2-home-section.jpg" title={contentMap.card1.title} text={contentMap.card1.text} btnText={contentMap.card1.btnText} />
-      <MiddleSection title={contentMap.middle.title} text={contentMap.middle.text} subText={contentMap.middle.subText} />
-      <HomeCard imgUrl="/home/1-home-section.jpg" title={contentMap.card2.title} text={contentMap.card2.text} btnText={contentMap.card2.btnText} />
-    </section>
-  </div>
+  <section>
+    <HomeCard imgUrl="/home/2-home-section.jpg" title={contentMap.card1.title} text={contentMap.card1.text} btnText={contentMap.card1.btnText} />
+    <MiddleSection title={contentMap.middle.title} text={contentMap.middle.text} subText={contentMap.middle.subText} />
+    <HomeCard imgUrl="/home/1-home-section.jpg" title={contentMap.card2.title} text={contentMap.card2.text} btnText={contentMap.card2.btnText} />
+  </section>
 </Layout>
 
 <style>
-  body {
-    width: 100%;
-    height: 100vh;
-    display: block;
-  }
-  section {
-    display: flex;
-    height: 100vh;
-  }
+body {
+  width: 100%;
+  height: 100vh;
+  display: block;
+}
+
+section {
+  display: flex;
+  height: 100vh;
+}
 </style>
