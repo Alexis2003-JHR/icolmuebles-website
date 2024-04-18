@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Carousel from "../components/home/Carousel.astro";
 import HomeCard from "../components/home/HomeCard.astro";
+import MiddleSection from "../components/home/MiddleSection.astro"
 
 const contentMap = {
   card1: {
@@ -13,25 +14,24 @@ const contentMap = {
     title: "RESIDENCIAL",
     text: "AMUEBLA TUS ESPACIOS CON LOS MEJORES DISEÑOS Y LOS MEJORES MATERIALES",
     btnText: "CONOCER MÁS"
+  },
+  middle: {
+    title: "Nuestros Proyectos",
+    text: "Puedes encontrar la mejor muebleria del mercado para tu proyecto residencial como para tu apartamento",
+    subText: "Empecemos!"
   }
 };
 ---
 
 <Layout title="Home">
-  <Carousel />
-  <div class="section">
-    <HomeCard imgUrl="/home/2-home-section.jpg" title={contentMap.card1.title} text={contentMap.card1.text} btnText={contentMap.card1.btnText}/>
-    <div class="middle-section">
-      <div class="middle-content">
-        <h3>Nuestros Proyectos</h3>
-        <p>
-          Puedes encontrar la mejor muebleria del mercado para tu proyecto
-          residencial como para tu apartamento.
-        </p>
-        <p><span>Empecemos!</span></p>
-      </div>
-    </div>
-    <HomeCard imgUrl="/home/1-home-section.jpg" title={contentMap.card2.title} text={contentMap.card2.text} btnText={contentMap.card2.btnText}/>
+  <div class="main-container">
+    <section><Carousel /></section>
+
+    <section>
+      <HomeCard imgUrl="/home/2-home-section.jpg" title={contentMap.card1.title} text={contentMap.card1.text} btnText={contentMap.card1.btnText} />
+      <MiddleSection title={contentMap.middle.title} text={contentMap.middle.text} subText={contentMap.middle.subText} />
+      <HomeCard imgUrl="/home/1-home-section.jpg" title={contentMap.card2.title} text={contentMap.card2.text} btnText={contentMap.card2.btnText} />
+    </section>
   </div>
 </Layout>
 
@@ -41,27 +41,8 @@ const contentMap = {
     height: 100vh;
     display: block;
   }
-  .section {
+  section {
     display: flex;
     height: 100vh;
-  }
-  .middle-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  .middle-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-  .middle-content h3 {
-    font-family: "montserrat", sans-serif;
-  }
-  .middle-content p span {
-    color: var(--brown-own);
-    font-weight: 600;
   }
 </style>
