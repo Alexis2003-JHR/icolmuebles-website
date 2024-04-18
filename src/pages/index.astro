@@ -2,12 +2,25 @@
 import Layout from "../layouts/Layout.astro";
 import Carousel from "../components/home/Carousel.astro";
 import HomeCard from "../components/home/HomeCard.astro";
+
+const contentMap = {
+  card1: {
+    title: "COMERCIAL",
+    text: "QUEREMOS QUE NUESTROS CLIENTES HABLEN POR NUESTRO TRABAJO",
+    btnText: "VER PROYECTOS"
+  },
+  card2: {
+    title: "RESIDENCIAL",
+    text: "AMUEBLA TUS ESPACIOS CON LOS MEJORES DISEÑOS Y LOS MEJORES MATERIALES",
+    btnText: "CONOCER MÁS"
+  }
+};
 ---
 
 <Layout title="Home">
   <Carousel />
   <div class="section">
-    <HomeCard imgUrl="/home/2-home-section.jpg" />
+    <HomeCard imgUrl="/home/2-home-section.jpg" title={contentMap.card1.title} text={contentMap.card1.text} btnText={contentMap.card1.btnText}/>
     <div class="middle-section">
       <div class="middle-content">
         <h3>Nuestros Proyectos</h3>
@@ -18,7 +31,7 @@ import HomeCard from "../components/home/HomeCard.astro";
         <p><span>Empecemos!</span></p>
       </div>
     </div>
-    <HomeCard imgUrl="/home/1-home-section.jpg" />
+    <HomeCard imgUrl="/home/1-home-section.jpg" title={contentMap.card2.title} text={contentMap.card2.text} btnText={contentMap.card2.btnText}/>
   </div>
 </Layout>
 
