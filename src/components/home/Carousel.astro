@@ -1,79 +1,86 @@
 ---
 import CarouselElement from "./CarouselElement.astro";
 let images = [
-  "/1.jpg",
-  "/2.jpg",
-  "/3.jpg",
-  "/4.jpg",
-  "/5.jpg",
-  "/6.jpg",
+  "/home/carousel/1.jpg",
+  "/home/carousel/2.jpg",
+  "/home/carousel/3.jpg",
+  "/home/carousel/4.jpg",
+  "/home/carousel/5.jpg",
+  "/home/carousel/6.jpg",
 ];
 ---
 
 <div class="carousel-container" id="carousel">
-  {images.map((image, index) => (
-    <>
-    <CarouselElement imgName={image} />
-    {index === 2 && 
-      <div class="titular-container">
-        <p class="carousel-titular">
-          B<br>A<br>J<br>A<br><br>P<br>A<br>R<br>A<br><br>D<br>E<br>S<br>C<br>U<br>B<br>R<br>I<br>R<br><br>M<br>Á<br>S
-        </p>
-      </div>}
-    </>
-  ))}
+  {
+    images.map((image, index) => (
+      <>
+        <CarouselElement imgName={image} />
+        {index === 2 && (
+          <div class="titular-container">
+            <p class="carousel-titular">
+              B<br />A<br />J<br />A<br />
+              <br />P<br />A<br />R<br />A<br />
+              <br />D<br />E<br />S<br />C<br />U<br />B<br />R<br />I<br />R
+              <br />
+              <br />M<br />Á<br />S
+            </p>
+          </div>
+        )}
+      </>
+    ))
+  }
 </div>
 
 <client:only>
   <script>
-    const carousel = document.getElementById('carousel');
+    const carousel = document.getElementById("carousel");
     let isDown = false;
     let startX: number = 0;
     let scrollLeft: number = 0;
     if (carousel != null) {
-      carousel.addEventListener('mousedown', (e: MouseEvent) => {
+      carousel.addEventListener("mousedown", (e: MouseEvent) => {
         isDown = true;
         startX = e.pageX - carousel.offsetLeft;
         scrollLeft = carousel.scrollLeft;
       });
-    
-      carousel.addEventListener('mouseleave', () => {
+
+      carousel.addEventListener("mouseleave", () => {
         isDown = false;
       });
-    
-      carousel.addEventListener('mouseup', () => {
+
+      carousel.addEventListener("mouseup", () => {
         isDown = false;
       });
-    
-      carousel.addEventListener('mousemove', (e: MouseEvent) => {
+
+      carousel.addEventListener("mousemove", (e: MouseEvent) => {
         if (isDown == true) {
           e.preventDefault();
           const x = e.pageX - carousel.offsetLeft;
           const walk = (x - startX) * 1;
           carousel.scrollLeft = scrollLeft - walk;
         }
-      }); 
+      });
     }
   </script>
 </client:only>
 
 <style>
-.carousel-container {
-  display: flex;
-  height: 100vh;
+  .carousel-container {
+    display: flex;
+    height: 100vh;
 
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 50%;
-}
-.titular-container {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  margin-right: 20px;
-}
-.carousel-titular {
-  font-size: 20px;
-  font-weight: 500;
-}
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 50%;
+  }
+  .titular-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: 20px;
+  }
+  .carousel-titular {
+    font-size: 20px;
+    font-weight: 500;
+  }
 </style>
