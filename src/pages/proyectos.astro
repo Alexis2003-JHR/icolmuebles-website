@@ -1,6 +1,72 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProyectSection from '../components/proyectos/ProyectSection.astro';
+
+const ResidencialData = [
+	{
+		url: "/home/carousel/1.jpg",
+		title: "Sala Warm In Wood",
+		text: "Residencial",
+	},
+	{
+		url: "/home/carousel/2.jpg",
+		title: "Sala Warm In Wood",
+		text: "Residencial",
+	},
+	{
+		url: "/home/carousel/3.jpg",
+		title: "Sala Warm In Wood",
+		text: "Residencial",
+	},
+	{
+		url: "/home/carousel/4.jpg",
+		title: "Sala Warm In Wood",
+		text: "Residencial",
+	},
+	{
+		url: "/home/carousel/5.jpg",
+		title: "Sala Warm In Wood",
+		text: "Residencial",
+	},
+	{
+		url: "/home/carousel/6.jpg",
+		title: "Sala Warm In Wood",
+		text: "Residencial",
+	},
+];
+
+const CommercialData = [
+	{
+		url: "/home/carousel/6.jpg",
+		title: "Sala Warm In Wood",
+		text: "Residencial",
+	},
+	{
+		url: "/home/carousel/5.jpg",
+		title: "Sala Warm In Wood",
+		text: "Residencial",
+	},
+	{
+		url: "/home/carousel/4.jpg",
+		title: "Sala Warm In Wood",
+		text: "Residencial",
+	},
+	{
+		url: "/home/carousel/3.jpg",
+		title: "Sala Warm In Wood",
+		text: "Residencial",
+	},
+	{
+		url: "/home/carousel/2.jpg",
+		title: "Sala Warm In Wood",
+		text: "Residencial",
+	},
+	{
+		url: "/home/carousel/1.jpg",
+		title: "Sala Warm In Wood",
+		text: "Residencial",
+	},
+];
 ---
 
 <Layout title="Proyectos">
@@ -15,10 +81,10 @@ import ProyectSection from '../components/proyectos/ProyectSection.astro';
 		</div>
 		
 		<section id="section1">
-			<ProyectSection text="RESIDENCIAL"/>
+			<ProyectSection data={ResidencialData}/>
 		</section>
 		<section id="section2" style="display: none;">
-			<ProyectSection text="COMMERCIAL"/>
+			<ProyectSection data={CommercialData}/>
 		</section>
 	</main-container>
 </Layout>

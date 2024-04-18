@@ -1,9 +1,9 @@
 ---
-export interface Props {
-  text: string;
-}
+import ProyectItem from './ProyectItem.astro';
 
-const { text } = Astro.props;
+const {data} = Astro.props;
 ---
 
-<h1>{ text }</h1>
+{data.map(item => (
+  <ProyectItem url={item.url} title={item.title} text={item.text} />
+))}
