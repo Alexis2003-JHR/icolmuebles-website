@@ -10,10 +10,12 @@ const { imgUrl } = Astro.props;
 
 <div class="card-container">
   <Image src={imgUrl} alt="a" width={500} height={400} />
+  <div class="filter"></div>
 </div>
 
 <style>
   .card-container {
+    position: relative;
     width: 90%;
     opacity: 2;
   }
@@ -21,5 +23,12 @@ const { imgUrl } = Astro.props;
     object-fit: cover;
     height: 100vh;
     width: 100%;
+  }
+  .filter {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: #ffffff3f 0% 0% no-repeat padding-box;
   }
 </style>
