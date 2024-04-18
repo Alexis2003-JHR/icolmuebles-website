@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ProyectSection from '../components/proyectos/ProyectSection.astro';
 ---
 
 <Layout title="Proyectos">
@@ -13,8 +14,12 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 		
-		<section id="section1" class="residencial"><p>RESIDENCIAL TEXTO</p></section>
-		<section id="section2" class="comercial" style="display: none;"><p>COMERCIAL TEXTO</p></section>
+		<section id="section1">
+			<ProyectSection text="RESIDENCIAL"/>
+		</section>
+		<section id="section2" style="display: none;">
+			<ProyectSection text="COMMERCIAL"/>
+		</section>
 	</main-container>
 </Layout>
 
