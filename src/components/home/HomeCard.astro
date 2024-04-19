@@ -2,20 +2,20 @@
 import { Image } from "astro:assets";
 
 export interface Props {
-  imgUrl: string;
+  imageCard: any;
   title: string;
   text: string;
   btnText: string;
 }
 
-const { imgUrl } = Astro.props;
+const { imageCard } = Astro.props;
 const { title } = Astro.props;
 const { text } = Astro.props;
 const { btnText } = Astro.props;
 ---
 
 <div class="card-container">
-  <Image src={imgUrl} alt="a" width={500} height={400} />
+  <Image src={imageCard} alt="a" quality="high" format="avif"/>
   <div class="card-content">
     <div class="text-content">
       <p>{ text }</p>

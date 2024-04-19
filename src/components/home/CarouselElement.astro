@@ -1,7 +1,8 @@
 ---
 import { Image } from "astro:assets";
+
 export interface Props {
-  imgName: string;
+  imgName: any;
 }
 
 const { imgName } = Astro.props;
@@ -15,6 +16,7 @@ const { imgName } = Astro.props;
     height={400}
     decoding="async"
     format="avif"
+    quality="high"
   />
 
   <style>
