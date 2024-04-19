@@ -19,8 +19,8 @@ import Layout from '../layouts/Layout.astro';
 		</section>
 	
 		<section class="director-section">
-			<div class="title">
-				<p>N<br>U<br>E<br>S<br>T<br>R<br>O<br>D<br>I<br>R<br>E<br>C<br>T<br>O<br>R</p>
+			<div class="title title-director">
+				<p>N<br>U<br>E<br>S<br>T<br>R<br>O<br><br>D<br>I<br>R<br>E<br>C<br>T<br>O<br>R</p>
 			</div>
 			<div class="image-container">
 				<div class="image image-director"><img src="/home/carousel/1.jpg" alt=""></div>
@@ -35,14 +35,13 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-main-container {
-	padding-top: 50px;
-}
 section {
 	display: flex;
 	flex-wrap: wrap;
+	height: 100vh;
+	padding-top: 50px;
 }
-.nosotros-section .image-container {
+.image-container {
 	display: flex;
 	justify-content: center;
 	width: 70%;
@@ -66,6 +65,9 @@ section {
 	font-size: 25px;
 	width: fit-content;
 	width: 30%;
+}
+.title-director {
+	width: 15%;
 }
 .text-container {
 	display: flex;
