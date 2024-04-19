@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 type dataImg = {
   url: string;
   title: string;
@@ -14,8 +16,34 @@ export interface Props {
 const { url, title, text } = Astro.props;
 ---
 
-<div class="container">
-  <p>{url}</p>
-  <p>{title}</p>
-  <p>{text}</p>
+<div class="card-container">
+  <Image src={url} alt="a" width={500} height={400} />
+  <p class="title">{title}</p>
+  <p class="text">{text}</p>
 </div>
+
+<style>
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+  .card-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  .card-container p {
+    margin: 0px;
+  }
+  .title {
+    font-size: 35px;
+    font-family: "Montserrat", sans-serif;
+  }
+  .text {
+    font-size: 30px;
+    color: #000000b3;
+  }
+</style>

@@ -80,12 +80,12 @@ const CommercialData = [
       </div>
     </div>
 
-    <section id="section1">
+    <div id="section1" class="section">
       <ProyectSection data={ResidencialData} />
-    </section>
-    <section id="section2" style="display: none;">
+    </div>
+    <div id="section2" class="section" style="display: none;">
       <ProyectSection data={CommercialData} />
-    </section>
+    </div>
   </main-container>
 </Layout>
 
@@ -112,7 +112,8 @@ const CommercialData = [
 <style>
   main-container {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
     height: 100vh;
   }
@@ -122,7 +123,6 @@ const CommercialData = [
     width: 500px;
     justify-content: space-around;
   }
-
   .option {
     height: fit-content;
     padding: 6px 20px;
@@ -143,5 +143,9 @@ const CommercialData = [
 
   .active {
     border-bottom: 4px solid var(--yellow-own);
+  }
+
+  .section {
+    width: 100%;
   }
 </style>

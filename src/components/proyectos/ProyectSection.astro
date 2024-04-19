@@ -14,8 +14,21 @@ export interface Props {
 const { data } = Astro.props;
 ---
 
-{
-  data.map((item) => (
-    <ProyectItem url={item.url} title={item.title} text={item.text} />
-  ))
-}
+<div class="main-container">
+  {
+    data.map((item) => (
+      <ProyectItem url={item.url} title={item.title} text={item.text} />
+    ))
+  }
+</div>
+
+<style>
+  .main-container {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content;
+    width: 100%;
+    margin-top: 30px;
+  }
+</style>
