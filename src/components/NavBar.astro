@@ -1,4 +1,4 @@
-<nav>
+<nav class={new URL(Astro.request.url).pathname === '/contacto' ? 'hide-nav' : ''}>
   <div class="nav-bar-content">
     <div class="ico">
       <p>ICOL<br />MUEBLES</p>
@@ -38,6 +38,9 @@
     background: #ffffff5c 0% 0% no-repeat padding-box;
     z-index: 1;
     opacity: 1;
+  }
+  .hide-nav {
+    display: none;
   }
   .nav-bar-content {
     height: 80%;
