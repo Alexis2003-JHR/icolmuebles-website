@@ -1,4 +1,4 @@
-<nav class={new URL(Astro.request.url).pathname === '/contacto' ? 'hide-nav' : ''}>
+<nav>
   <div class="nav-bar-content">
     <div class="ico">
       <p>ICOL<br />MUEBLES</p>
@@ -13,6 +13,15 @@
 </nav>
 
 <script>
+  const navContainer = document.querySelector("nav");
+  if (navContainer !== null) {
+    const currentURL = window.location.href;
+    console.log(currentURL.includes("contacto"));
+    if (currentURL.includes("contacto")) {
+      navContainer.classList.add("hidden");
+    }
+  }
+
   const nav = document.querySelector(".nav-bar-content");
   if (nav !== null) {
     const navLinks = nav.querySelectorAll("a");
@@ -39,7 +48,7 @@
     z-index: 1;
     opacity: 1;
   }
-  .hide-nav {
+  .hidden {
     display: none;
   }
   .nav-bar-content {
