@@ -104,6 +104,12 @@ const CommercialData = [
     if (option != null) {
       option.addEventListener("click", function () {
         showSection(index + 1);
+        var activeElement = document.querySelector(".active");
+        if(activeElement != null) {
+          console.log(activeElement);
+          activeElement.classList.remove("active");
+        }
+        option.classList.add("active");
       });
     }
   });
@@ -142,6 +148,7 @@ const CommercialData = [
   }
 
   .active {
+    transition: 1s linear;
     border-bottom: 4px solid var(--yellow-own);
   }
 

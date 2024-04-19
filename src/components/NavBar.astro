@@ -19,7 +19,7 @@
     const currentURL = window.location.href;
     navLinks.forEach((link) => {
       if (link.href === currentURL) {
-        link.classList.add("active");
+        link.classList.add("active-btn-nav");
       }
     });
   }
@@ -60,7 +60,7 @@
   li {
     margin: 10px 0;
   }
-  li a.active {
+  li a.active-btn-nav {
     color: var(--brown-own);
   }
   li a:hover {
