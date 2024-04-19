@@ -1,147 +1,147 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ProyectSection from '../components/proyectos/ProyectSection.astro';
+import Layout from "../layouts/Layout.astro";
+import ProyectSection from "../components/proyectos/ProyectSection.astro";
 
 const ResidencialData = [
-	{
-		url: "/home/carousel/1.jpg",
-		title: "Sala Warm In Wood",
-		text: "Residencial",
-	},
-	{
-		url: "/home/carousel/2.jpg",
-		title: "Sala Warm In Wood",
-		text: "Residencial",
-	},
-	{
-		url: "/home/carousel/3.jpg",
-		title: "Sala Warm In Wood",
-		text: "Residencial",
-	},
-	{
-		url: "/home/carousel/4.jpg",
-		title: "Sala Warm In Wood",
-		text: "Residencial",
-	},
-	{
-		url: "/home/carousel/5.jpg",
-		title: "Sala Warm In Wood",
-		text: "Residencial",
-	},
-	{
-		url: "/home/carousel/6.jpg",
-		title: "Sala Warm In Wood",
-		text: "Residencial",
-	},
+  {
+    url: "/home/carousel/1.jpg",
+    title: "Sala Warm In Wood",
+    text: "Residencial",
+  },
+  {
+    url: "/home/carousel/2.jpg",
+    title: "Sala Warm In Wood",
+    text: "Residencial",
+  },
+  {
+    url: "/home/carousel/3.jpg",
+    title: "Sala Warm In Wood",
+    text: "Residencial",
+  },
+  {
+    url: "/home/carousel/4.jpg",
+    title: "Sala Warm In Wood",
+    text: "Residencial",
+  },
+  {
+    url: "/home/carousel/5.jpg",
+    title: "Sala Warm In Wood",
+    text: "Residencial",
+  },
+  {
+    url: "/home/carousel/6.jpg",
+    title: "Sala Warm In Wood",
+    text: "Residencial",
+  },
 ];
 
 const CommercialData = [
-	{
-		url: "/home/carousel/6.jpg",
-		title: "Sala Warm In Wood",
-		text: "Residencial",
-	},
-	{
-		url: "/home/carousel/5.jpg",
-		title: "Sala Warm In Wood",
-		text: "Residencial",
-	},
-	{
-		url: "/home/carousel/4.jpg",
-		title: "Sala Warm In Wood",
-		text: "Residencial",
-	},
-	{
-		url: "/home/carousel/3.jpg",
-		title: "Sala Warm In Wood",
-		text: "Residencial",
-	},
-	{
-		url: "/home/carousel/2.jpg",
-		title: "Sala Warm In Wood",
-		text: "Residencial",
-	},
-	{
-		url: "/home/carousel/1.jpg",
-		title: "Sala Warm In Wood",
-		text: "Residencial",
-	},
+  {
+    url: "/home/carousel/6.jpg",
+    title: "Sala Warm In Wood",
+    text: "Commercial",
+  },
+  {
+    url: "/home/carousel/5.jpg",
+    title: "Sala Warm In Wood",
+    text: "Commercial",
+  },
+  {
+    url: "/home/carousel/4.jpg",
+    title: "Sala Warm In Wood",
+    text: "Commercial",
+  },
+  {
+    url: "/home/carousel/3.jpg",
+    title: "Sala Warm In Wood",
+    text: "Commercial",
+  },
+  {
+    url: "/home/carousel/2.jpg",
+    title: "Sala Warm In Wood",
+    text: "Commercial",
+  },
+  {
+    url: "/home/carousel/1.jpg",
+    title: "Sala Warm In Wood",
+    text: "Commercial",
+  },
 ];
 ---
 
 <Layout title="Proyectos">
-	<main-container>
-		<div class="selection-menu">
-			<div id="opt-1" class="option residencial-opt active">
-				<p>RESIDENCIAL</p>
-			</div>
-			<div id="opt-2" class="option commercial-opt">
-				<p>COMERCIAL</p>
-			</div>
-		</div>
-		
-		<section id="section1">
-			<ProyectSection data={ResidencialData}/>
-		</section>
-		<section id="section2" style="display: none;">
-			<ProyectSection data={CommercialData}/>
-		</section>
-	</main-container>
+  <main-container>
+    <div class="selection-menu">
+      <div id="opt-1" class="option residencial-opt active">
+        <p>RESIDENCIAL</p>
+      </div>
+      <div id="opt-2" class="option commercial-opt">
+        <p>COMERCIAL</p>
+      </div>
+    </div>
+
+    <section id="section1">
+      <ProyectSection data={ResidencialData} />
+    </section>
+    <section id="section2" style="display: none;">
+      <ProyectSection data={CommercialData} />
+    </section>
+  </main-container>
 </Layout>
 
-
 <script>
-function showSection(sectionNumber: number) {
-    ['section1', 'section2'].forEach((sectionId, index) => {
-        let section = document.getElementById(sectionId);
-        if (section != null) {
-            section.style.display = sectionNumber === index + 1 ? 'block' : 'none';
-        }
+  function showSection(sectionNumber: number) {
+    ["section1", "section2"].forEach((sectionId, index) => {
+      let section = document.getElementById(sectionId);
+      if (section != null) {
+        section.style.display = sectionNumber === index + 1 ? "block" : "none";
+      }
     });
-}
+  }
 
-['opt-1', 'opt-2'].forEach((optionId, index) => {
+  ["opt-1", "opt-2"].forEach((optionId, index) => {
     let option = document.getElementById(optionId);
     if (option != null) {
-        option.addEventListener("click", function() { showSection(index + 1); });
+      option.addEventListener("click", function () {
+        showSection(index + 1);
+      });
     }
-});
+  });
 </script>
 
 <style>
-main-container {
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	height: 100vh;
-}
-.selection-menu {
-	display: flex;
-	margin-top: 30px;
-	width: 500px;
-	justify-content: space-around;
-}
+  main-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+  }
+  .selection-menu {
+    display: flex;
+    margin-top: 30px;
+    width: 500px;
+    justify-content: space-around;
+  }
 
-.option {
-	height: fit-content;
-	padding: 6px 20px;
-}
+  .option {
+    height: fit-content;
+    padding: 6px 20px;
+  }
 
-.option:hover {
-	color: var(--yellow-own);
-	cursor: pointer;
-	transition: .4s ease-in;
-}
+  .option:hover {
+    color: var(--yellow-own);
+    cursor: pointer;
+    transition: 0.4s ease-in;
+  }
 
-.option p {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 18px;
-	font-weight: 500;
-	margin: 0px;
-}
+  .option p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0px;
+  }
 
-.active {
-	border-bottom: 4px solid var(--yellow-own);
-}
-
+  .active {
+    border-bottom: 4px solid var(--yellow-own);
+  }
 </style>

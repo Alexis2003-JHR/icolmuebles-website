@@ -1,0 +1,21 @@
+---
+type dataImg = {
+  url: string;
+  title: string;
+  text: string;
+};
+
+export interface Props {
+  url: string;
+  title: string;
+  text: string;
+}
+
+const { url, title, text } = Astro.props;
+---
+
+<div class="container">
+  <p>{url}</p>
+  <p>{title}</p>
+  <p>{text}</p>
+</div>

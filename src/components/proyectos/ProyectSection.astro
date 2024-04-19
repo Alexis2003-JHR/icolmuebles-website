@@ -1,9 +1,21 @@
 ---
-import ProyectItem from './ProyectItem.astro';
+import ProyectItem from "./ProyectCard.astro";
 
-const {data} = Astro.props;
+type dataImg = {
+  url: string;
+  title: string;
+  text: string;
+};
+
+export interface Props {
+  data: Array<dataImg>;
+}
+
+const { data } = Astro.props;
 ---
 
-{data.map(item => (
-  <ProyectItem url={item.url} title={item.title} text={item.text} />
-))}
+{
+  data.map((item) => (
+    <ProyectItem url={item.url} title={item.title} text={item.text} />
+  ))
+}
