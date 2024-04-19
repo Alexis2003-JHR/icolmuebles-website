@@ -1,23 +1,17 @@
 ---
 import { Image } from "astro:assets";
 
-type dataImg = {
-  url: string;
-  title: string;
-  text: string;
-};
-
 export interface Props {
-  url: string;
+  imageCard: any;
   title: string;
   text: string;
 }
 
-const { url, title, text } = Astro.props;
+const { imageCard, title, text } = Astro.props;
 ---
 
 <div class="card-container">
-  <Image src={url} alt="a" width={500} height={400} />
+  <Image src={imageCard} alt="a" format="avif"/>
   <p class="title">{title}</p>
   <p class="text">{text}</p>
 </div>

@@ -2,7 +2,7 @@
 import ProyectItem from "./ProyectCard.astro";
 
 type dataImg = {
-  url: string;
+  imageCard: any;
   title: string;
   text: string;
 };
@@ -17,7 +17,7 @@ const { data } = Astro.props;
 <div class="main-container">
   {
     data.map((item) => (
-      <ProyectItem url={item.url} title={item.title} text={item.text} />
+      <ProyectItem imageCard={item.imageCard} title={item.title} text={item.text} />
     ))
   }
 </div>
