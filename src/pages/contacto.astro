@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../layouts/Layout.astro";
+import Image1 from "../assets/contacto/1.jpg";
 ---
 
 <Layout title="Contacto">
@@ -27,6 +30,7 @@ import Layout from "../layouts/Layout.astro";
       </form>
     </div>
     <div class="img-section">
+      <Image src={Image1} alt="" typeof="high" />
       <img src="/home/carousel/6.jpg" alt="" />
     </div>
   </main-section>
