@@ -1,5 +1,9 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../layouts/Layout.astro";
+import Image1 from "../assets/nosotros/1.jpg";
+import Image2 from "../assets/nosotros/2.jpg";
 ---
 
 <Layout title="Nosotros">
@@ -7,7 +11,7 @@ import Layout from "../layouts/Layout.astro";
     <section class="nosotros-section">
       <div class="image-container">
         <div class="image image-nosotros">
-          <img src="/home/carousel/3.jpg" alt="" />
+          <Image src={Image1} alt="" format="avif" />
         </div>
       </div>
       <div class="title">
@@ -39,7 +43,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <div class="image-container">
         <div class="image image-director">
-          <img src="/home/carousel/1.jpg" alt="" />
+          <Image src={Image2} alt="" format="avif" />
         </div>
       </div>
       <div class="text-container">
