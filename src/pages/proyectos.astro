@@ -2,41 +2,45 @@
 import Layout from "../layouts/Layout.astro";
 import ProyectSection from "../components/proyectos/ProyectSection.astro";
 
-import image1 from "../assets/home/carousel/1.jpg";
-import image2 from "../assets/home/carousel/2.jpg";
-import image3 from "../assets/home/carousel/3.jpg";
-import image4 from "../assets/home/carousel/4.jpg";
-import image5 from "../assets/home/carousel/5.jpg";
-import image6 from "../assets/home/carousel/6.jpg";
+import imgResidencial1 from "../assets/proyectos/residencial/1.jpg";
+import imgResidencial2 from "../assets/proyectos/residencial/2.jpg";
+import imgResidencial3 from "../assets/proyectos/residencial/3.jpg";
+import imgResidencial4 from "../assets/proyectos/residencial/4.jpg";
+import imgResidencial5 from "../assets/proyectos/residencial/5.jpg";
+import imgResidencial6 from "../assets/proyectos/residencial/6.jpg";
+
+import imgComercial1 from "../assets/proyectos/comercial/1.jpg";
+import imgComercial2 from "../assets/proyectos/comercial/2.jpg";
+import imgComercial3 from "../assets/proyectos/comercial/3.jpg";
 
 const ResidencialData = [
   {
-    imageCard: image1,
+    imageCard: imgResidencial1,
     title: "Sala Warm In Wood",
     text: "Residencial",
   },
   {
-    imageCard: image2,
+    imageCard: imgResidencial2,
     title: "Sala Warm In Wood",
     text: "Residencial",
   },
   {
-    imageCard: image3,
+    imageCard: imgResidencial3,
     title: "Sala Warm In Wood",
     text: "Residencial",
   },
   {
-    imageCard: image4,
+    imageCard: imgResidencial4,
     title: "Sala Warm In Wood",
     text: "Residencial",
   },
   {
-    imageCard: image5,
+    imageCard: imgResidencial5,
     title: "Sala Warm In Wood",
     text: "Residencial",
   },
   {
-    imageCard: image6,
+    imageCard: imgResidencial6,
     title: "Sala Warm In Wood",
     text: "Residencial",
   },
@@ -44,32 +48,17 @@ const ResidencialData = [
 
 const CommercialData = [
   {
-    imageCard: image6,
+    imageCard: imgComercial1,
     title: "Sala Warm In Wood",
     text: "Commercial",
   },
   {
-    imageCard: image5,
+    imageCard: imgComercial2,
     title: "Sala Warm In Wood",
     text: "Commercial",
   },
   {
-    imageCard: image4,
-    title: "Sala Warm In Wood",
-    text: "Commercial",
-  },
-  {
-    imageCard: image3,
-    title: "Sala Warm In Wood",
-    text: "Commercial",
-  },
-  {
-    imageCard: image2,
-    title: "Sala Warm In Wood",
-    text: "Commercial",
-  },
-  {
-    imageCard: image1,
+    imageCard: imgComercial3,
     title: "Sala Warm In Wood",
     text: "Commercial",
   },
@@ -112,7 +101,7 @@ const CommercialData = [
       option.addEventListener("click", function () {
         showSection(index + 1);
         var activeElement = document.querySelector(".active");
-        if(activeElement != null) {
+        if (activeElement != null) {
           console.log(activeElement);
           activeElement.classList.remove("active");
         }
