@@ -10,7 +10,7 @@ import Image1 from "../assets/contacto/1.jpg";
     <div class="previous-container">
       <a href="/">&#60; Regresar</a>
     </div>
-    <div class="form-container">
+    <div class="form-container section">
       <form action="">
         <h3>CONTACTO</h3>
         <input type="text" class="form-input" placeholder="Ingresa tu nombre" />
@@ -29,7 +29,7 @@ import Image1 from "../assets/contacto/1.jpg";
         </div>
       </form>
     </div>
-    <div class="img-section">
+    <div class="img-section section">
       <Image src={Image1} alt="" typeof="high" />
     </div>
   </main-section>
@@ -70,6 +70,7 @@ import Image1 from "../assets/contacto/1.jpg";
   }
   .form-container form {
     display: flex;
+    width: 80%;
     flex-direction: column;
   }
   .form-container h3 {
@@ -78,7 +79,7 @@ import Image1 from "../assets/contacto/1.jpg";
   }
   .form-input {
     height: 48px;
-    width: 450px;
+    width: 95%;
     border: none;
     background: #e9e9e9;
     padding-left: 20px;
@@ -91,7 +92,7 @@ import Image1 from "../assets/contacto/1.jpg";
   }
   .form-text-area {
     border: none;
-    width: 450px;
+    width: 95%;
     height: 150px;
     background: #e9e9e9;
     padding-left: 20px;
@@ -108,7 +109,7 @@ import Image1 from "../assets/contacto/1.jpg";
     justify-content: center;
     align-items: center;
     color: var(--white-own);
-    width: 470px;
+    width: 95%;
     height: 50px;
     background: var(--black-own);
   }
@@ -124,5 +125,21 @@ import Image1 from "../assets/contacto/1.jpg";
     object-fit: cover;
     width: 100%;
     height: 100%;
+  }
+
+  @media screen and (max-width: 850px) {
+    main-section {
+      flex-wrap: wrap;
+    }
+    .section {
+      width: 100%;
+      height: 100%;
+    }
+    .form-container {
+      height: 80%;
+    }
+    .img-section {
+      height: 20%;
+    }
   }
 </style>
