@@ -45,9 +45,19 @@ const { title } = Astro.props;
   ::-webkit-scrollbar {
     display: none;
   }
+  * {
+    margin: 0;
+    padding: 0;
+  }
   html {
     font-family: "Quicksand", sans-serif;
     background: #fff;
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
   }
   body {
     margin: 0px;
