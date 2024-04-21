@@ -3,12 +3,49 @@
     <div class="ico">
       <p>ICOL<br />MUEBLES</p>
     </div>
-    <ul>
+    <ul class="nav-links" id="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/proyectos">Proyectos</a></li>
       <li><a href="/nosotros">Nosotros</a></li>
       <li><a href="/contacto">Contacto</a></li>
+      <p id="close-menu">X</p>
     </ul>
+    <div class="menu-btn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="42"
+        height="28"
+        viewBox="0 0 42 28"
+      >
+        <g
+          id="Grupo_37"
+          data-name="Grupo 37"
+          transform="translate(-5126 424.062)"
+        >
+          <rect
+            id="Rectángulo_23"
+            data-name="Rectángulo 23"
+            width="42"
+            height="6"
+            rx="3"
+            transform="translate(5126 -424.062)"></rect>
+          <rect
+            id="Rectángulo_24"
+            data-name="Rectángulo 24"
+            width="42"
+            height="6"
+            rx="3"
+            transform="translate(5126 -413.062)"></rect>
+          <rect
+            id="Rectángulo_25"
+            data-name="Rectángulo 25"
+            width="42"
+            height="6"
+            rx="3"
+            transform="translate(5126 -402.062)"></rect>
+        </g>
+      </svg>
+    </div>
   </div>
 </nav>
 
@@ -28,6 +65,30 @@
     navLinks.forEach((link) => {
       if (link.href === currentURL) {
         link.classList.add("active-btn-nav");
+      }
+    });
+  }
+
+  const btnMenu = document.querySelector(".menu-btn");
+  if (btnMenu !== null) {
+    btnMenu.addEventListener("click", function () {
+      const navLinks = document.getElementById("nav-links");
+      if (navLinks !== null) {
+        navLinks.style.display = "flex";
+      }
+      const closeBtn = document.getElementById("close-menu");
+      if (closeBtn !== null) {
+        closeBtn.style.display = "flex";
+      }
+    });
+  }
+
+  const closeBtn = document.getElementById("close-menu");
+  if (closeBtn !== null) {
+    closeBtn.addEventListener("click", function () {
+      const navLinks = document.getElementById("nav-links");
+      if (navLinks !== null) {
+        navLinks.style.display = "none";
       }
     });
   }
@@ -77,5 +138,54 @@
   li a:hover {
     color: var(--yellow-own);
     transition: 0.4s;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  #close-menu {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  /*RESPONSIVE*/
+  @media screen and (max-width: 850px) {
+    nav {
+      width: 100%;
+      height: 80px;
+      position: relative;
+    }
+    .nav-bar-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+    .nav-links {
+      position: fixed;
+      background-color: var(--yellow-own);
+      top: 0px;
+      width: 100%;
+      height: 100vh;
+      z-index: 2;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .nav-links a,
+    .nav-links p {
+      font-weight: 600;
+      font-size: 25px;
+    }
+    .menu-btn {
+      position: absolute;
+      display: flex;
+      right: 20px;
+      max-width: 35px;
+    }
   }
 </style>
