@@ -20,12 +20,12 @@ const ResidencialData = [
     text: "Residencial",
   },
   {
-    imageCard: imgResidencial2,
+    imageCard: imgResidencial3,
     title: "Sala Warm In Wood",
     text: "Residencial",
   },
   {
-    imageCard: imgResidencial3,
+    imageCard: imgResidencial2,
     title: "Sala Warm In Wood",
     text: "Residencial",
   },
@@ -90,7 +90,7 @@ const CommercialData = [
     ["section1", "section2"].forEach((sectionId, index) => {
       let section = document.getElementById(sectionId);
       if (section != null) {
-        section.style.display = sectionNumber === index + 1 ? "block" : "none";
+        section.style.display = sectionNumber === index + 1 ? "flex" : "none";
       }
     });
   }
@@ -136,7 +136,7 @@ const CommercialData = [
   .option:hover {
     color: var(--yellow-own);
     cursor: pointer;
-    transition: 0.4s ease-in;
+    transition: 0.4s;
   }
 
   .option p {
@@ -152,6 +152,8 @@ const CommercialData = [
   }
 
   .section {
+    display: flex;
     width: 100%;
+    justify-content: center;
   }
 </style>

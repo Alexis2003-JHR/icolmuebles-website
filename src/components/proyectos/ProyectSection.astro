@@ -17,18 +17,20 @@ const { data } = Astro.props;
 <div class="main-container">
   {
     data.map((item) => (
-      <ProyectItem imageCard={item.imageCard} title={item.title} text={item.text} />
+      <ProyectItem
+        imageCard={item.imageCard}
+        title={item.title}
+        text={item.text}
+      />
     ))
   }
 </div>
 
 <style>
   .main-container {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: min-content;
-    width: 100%;
-    margin-top: 30px;
+    columns: 3 250px;
+    column-gap: 10px;
+    width: 90%;
+    margin: 50px 0px;
   }
 </style>

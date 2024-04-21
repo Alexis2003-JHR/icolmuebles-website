@@ -11,22 +11,22 @@ const { imageCard, title, text } = Astro.props;
 ---
 
 <div class="card-container">
-  <Image src={imageCard} alt="a" format="avif"/>
+  <Image src={imageCard} alt="a" format="avif" />
   <p class="title">{title}</p>
   <p class="text">{text}</p>
 </div>
 
 <style>
   .card-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     align-items: center;
-    width: 80%;
+    break-inside: avoid;
+    margin-bottom: 30px;
+    width: 90%;
   }
   .card-container img {
     width: 100%;
     height: auto;
-    object-fit: cover;
     margin-bottom: 10px;
   }
   .card-container p {
