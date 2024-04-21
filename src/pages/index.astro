@@ -29,7 +29,7 @@ const contentMap = {
 <Layout title="Home">
   <section><Carousel /></section>
 
-  <section>
+  <section class="second-section">
     <HomeCard
       imageCard={Image1}
       title={contentMap.card1.title}
@@ -60,5 +60,12 @@ const contentMap = {
   section {
     display: flex;
     height: 100vh;
+  }
+
+  @media screen and (max-width: 850px) {
+    .second-section {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 </style>

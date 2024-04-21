@@ -11,31 +11,39 @@ const { subText } = Astro.props;
 ---
 
 <div class="middle-section">
-    <div class="middle-content">
-        <h3>{ title }</h3>
-        <p>{ text }</p>
-        <p><span>{ subText }</span></p>
-    </div>
+  <div class="middle-content">
+    <h3>{title}</h3>
+    <p>{text}</p>
+    <p><span>{subText}</span></p>
+  </div>
 </div>
 
 <style>
-.middle-section {
+  .middle-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}
-.middle-content {
+  }
+  .middle-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-}
-.middle-content h3 {
+  }
+  .middle-content h3 {
     font-family: "montserrat", sans-serif;
-}
-.middle-content p span {
+  }
+  .middle-content p span {
     color: var(--brown-own);
     font-weight: 600;
-}
+  }
+
+  @media screen and (max-width: 850px) {
+    .middle-section {
+      width: 100%;
+      height: 20%;
+      margin: 30px 10px;
+    }
+  }
 </style>

@@ -18,26 +18,34 @@ const { imgName } = Astro.props;
     format="avif"
     quality="high"
   />
-
-  <style>
-    .element-container {
-      flex: 0 0 auto;
-      scroll-snap-align: center;
-
-      max-height: 100vh;
-      width: 380px;
-      margin-right: 20px;
-      transition: 0.6s ease;
-    }
-    .element-container:hover {
-      cursor: crosshair;
-      width: 600px;
-      opacity: 1;
-    }
-    .element-container img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
 </div>
+
+<style>
+  .element-container {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+
+    max-height: 100vh;
+    width: 380px;
+    margin-right: 20px;
+    transition: 0.6s ease;
+  }
+  .element-container:hover {
+    cursor: crosshair;
+    width: 600px;
+    opacity: 1;
+  }
+  .element-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (max-width: 850px) {
+    .element-container {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 20px;
+    }
+  }
+</style>
