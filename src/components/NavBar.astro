@@ -50,48 +50,50 @@
 </nav>
 
 <script>
-  const navContainer = document.querySelector("nav");
-  if (navContainer !== null) {
-    const currentURL = window.location.href;
-    if (currentURL.includes("contacto")) {
-      navContainer.classList.add("hidden");
+  document.addEventListener('astro:page-load', () => {
+    const navContainer = document.querySelector("nav");
+    if (navContainer !== null) {
+      const currentURL = window.location.href;
+      if (currentURL.includes("contacto")) {
+        navContainer.classList.add("hidden");
+      }
     }
-  }
 
-  const nav = document.querySelector(".nav-bar-content");
-  if (nav !== null) {
-    const navLinks = nav.querySelectorAll("a");
-    const currentURL = window.location.href;
-    navLinks.forEach((link) => {
-      if (link.href === currentURL) {
-        link.classList.add("active-btn-nav");
-      }
-    });
-  }
+    const nav = document.querySelector(".nav-bar-content");
+    if (nav !== null) {
+      const navLinks = nav.querySelectorAll("a");
+      const currentURL = window.location.href;
+      navLinks.forEach((link) => {
+        if (link.href === currentURL) {
+          link.classList.add("active-btn-nav");
+        }
+      });
+    }
 
-  const btnMenu = document.querySelector(".menu-btn");
-  if (btnMenu !== null) {
-    btnMenu.addEventListener("click", function () {
-      const navLinks = document.getElementById("nav-links");
-      if (navLinks !== null) {
-        navLinks.style.display = "flex";
-      }
-      const closeBtn = document.getElementById("close-menu");
-      if (closeBtn !== null) {
-        closeBtn.style.display = "flex";
-      }
-    });
-  }
+    const btnMenu = document.querySelector(".menu-btn");
+    if (btnMenu !== null) {
+      btnMenu.addEventListener("click", function () {
+        const navLinks = document.getElementById("nav-links");
+        if (navLinks !== null) {
+          navLinks.style.display = "flex";
+        }
+        const closeBtn = document.getElementById("close-menu");
+        if (closeBtn !== null) {
+          closeBtn.style.display = "flex";
+        }
+      });
+    }
 
-  const closeBtn = document.getElementById("close-menu");
-  if (closeBtn !== null) {
-    closeBtn.addEventListener("click", function () {
-      const navLinks = document.getElementById("nav-links");
-      if (navLinks !== null) {
-        navLinks.style.display = "none";
-      }
-    });
-  }
+    const closeBtn = document.getElementById("close-menu");
+    if (closeBtn !== null) {
+      closeBtn.addEventListener("click", function () {
+        const navLinks = document.getElementById("nav-links");
+        if (navLinks !== null) {
+          navLinks.style.display = "none";
+        }
+      });
+    }
+  })
 </script>
 
 <style>
