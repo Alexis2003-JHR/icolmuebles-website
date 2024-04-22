@@ -86,29 +86,31 @@ const CommercialData = [
 </Layout>
 
 <script>
-  function showSection(sectionNumber: number) {
+  document.addEventListener('astro:page-load', () => {
+    function showSection(sectionNumber: number) {
     ["section1", "section2"].forEach((sectionId, index) => {
       let section = document.getElementById(sectionId);
       if (section != null) {
         section.style.display = sectionNumber === index + 1 ? "flex" : "none";
       }
-    });
-  }
-
-  ["opt-1", "opt-2"].forEach((optionId, index) => {
-    let option = document.getElementById(optionId);
-    if (option != null) {
-      option.addEventListener("click", function () {
-        showSection(index + 1);
-        var activeElement = document.querySelector(".active");
-        if (activeElement != null) {
-          console.log(activeElement);
-          activeElement.classList.remove("active");
-        }
-        option.classList.add("active");
       });
     }
-  });
+
+    ["opt-1", "opt-2"].forEach((optionId, index) => {
+      let option = document.getElementById(optionId);
+      if (option != null) {
+        option.addEventListener("click", function () {
+          showSection(index + 1);
+          var activeElement = document.querySelector(".active");
+          if (activeElement != null) {
+            console.log(activeElement);
+            activeElement.classList.remove("active");
+          }
+          option.classList.add("active");
+        });
+      }
+    });
+  })
 </script>
 
 <style>
