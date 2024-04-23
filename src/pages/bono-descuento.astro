@@ -1,6 +1,116 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+import image1 from "../assets/home/carousel/1.jpg";
 ---
 
-<Layout title="PromoSite">
+<Layout title="Bono de descuento">
+  <main-section>
+    <div class="img-container section">
+      <Image src={image1} alt="" typeof="high" />
+    </div>
+    <div class="info-container section">
+      <div class="content-container">
+        <div class="logo"><h1>ICOL<br />MUEBLES</h1></div>
+        <h3>Felicidades!</h3>
+        <p>Ganaste un bono de compra por <br /></p>
+        <p><span>$100.000COP</span> para tu siguiente compra.</p>
+        <div class="btn-container">
+          <a href="/proyectos">Reclama tu bono en un producto</a>
+        </div>
+        <p>
+          Amuebla tu apartamento con los muebles de alta calidad de Icolmuebles.
+        </p>
+      </div>
+    </div>
+  </main-section>
 </Layout>
+
+<style>
+  body {
+    width: 100%;
+    display: block;
+  }
+  main-section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+  .img-container {
+    width: 50%;
+  }
+  .img-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+  .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 70%;
+  }
+  .logo {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    height: fit-content;
+    font-size: 40px;
+  }
+  h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    width: 100%;
+  }
+  p {
+    font-size: 30px;
+  }
+  span {
+    font-size: 80px;
+  }
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .btn-container a {
+    background: var(--black-own);
+    padding: 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: 30px;
+    color: var(--white-own);
+  }
+  .btn-container a:hover {
+    background: var(--white-own);
+    color: #000;
+    transition: 0.8s;
+  }
+
+  @media screen and (max-width: 850px) {
+    main-section {
+      flex-wrap: wrap;
+    }
+    .section {
+      width: 100%;
+      height: 100%;
+    }
+    .info-container {
+      height: 80%;
+    }
+    .img-container {
+      height: 20%;
+    }
+    .previous-container {
+      left: 4%;
+    }
+  }
+</style>
