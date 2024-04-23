@@ -49,6 +49,21 @@
   </div>
 </div>
 
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const navContainer = document.querySelector(".footer-container");
+    if (navContainer !== null) {
+      const currentURL = window.location.href;
+      if (
+        currentURL.includes("contacto") ||
+        currentURL.includes("bono-descuento")
+      ) {
+        navContainer.classList.add("hidden");
+      }
+    }
+  });
+</script>
+
 <style>
   .footer-container {
     position: relative;
@@ -109,6 +124,10 @@
   .redes svg {
     width: 35px;
     margin-right: 10px;
+  }
+
+  .hidden {
+    display: none;
   }
   @media screen and (max-width: 850px) {
     .footer-container {

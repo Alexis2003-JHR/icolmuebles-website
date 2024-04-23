@@ -50,11 +50,14 @@
 </nav>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
+  document.addEventListener("astro:page-load", () => {
     const navContainer = document.querySelector("nav");
     if (navContainer !== null) {
       const currentURL = window.location.href;
-      if (currentURL.includes("contacto")) {
+      if (
+        currentURL.includes("contacto") ||
+        currentURL.includes("bono-descuento")
+      ) {
         navContainer.classList.add("hidden");
       }
     }
@@ -93,7 +96,7 @@
         }
       });
     }
-  })
+  });
 </script>
 
 <style>
