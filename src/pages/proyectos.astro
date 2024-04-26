@@ -8,6 +8,9 @@ import imgResidencial3 from "../assets/proyectos/residencial/3.jpg";
 import imgResidencial4 from "../assets/proyectos/residencial/4.jpg";
 import imgResidencial5 from "../assets/proyectos/residencial/5.jpg";
 import imgResidencial6 from "../assets/proyectos/residencial/6.jpg";
+import imgResidencial7 from "../assets/proyectos/residencial/7.jpg";
+import imgResidencial8 from "../assets/proyectos/residencial/8.jpg";
+import imgResidencial9 from "../assets/proyectos/residencial/9.jpg";
 
 import imgComercial1 from "../assets/proyectos/comercial/1.jpg";
 import imgComercial2 from "../assets/proyectos/comercial/2.jpg";
@@ -41,6 +44,21 @@ const ResidencialData = [
   },
   {
     imageCard: imgResidencial6,
+    title: "Sala Warm In Wood",
+    text: "Residencial",
+  },
+  {
+    imageCard: imgResidencial7,
+    title: "Sala Warm In Wood",
+    text: "Residencial",
+  },
+  {
+    imageCard: imgResidencial8,
+    title: "Sala Warm In Wood",
+    text: "Residencial",
+  },
+  {
+    imageCard: imgResidencial9,
     title: "Sala Warm In Wood",
     text: "Residencial",
   },
@@ -86,13 +104,13 @@ const CommercialData = [
 </Layout>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
+  document.addEventListener("astro:page-load", () => {
     function showSection(sectionNumber: number) {
-    ["section1", "section2"].forEach((sectionId, index) => {
-      let section = document.getElementById(sectionId);
-      if (section != null) {
-        section.style.display = sectionNumber === index + 1 ? "flex" : "none";
-      }
+      ["section1", "section2"].forEach((sectionId, index) => {
+        let section = document.getElementById(sectionId);
+        if (section != null) {
+          section.style.display = sectionNumber === index + 1 ? "flex" : "none";
+        }
       });
     }
 
@@ -110,7 +128,7 @@ const CommercialData = [
         });
       }
     });
-  })
+  });
 </script>
 
 <style>
