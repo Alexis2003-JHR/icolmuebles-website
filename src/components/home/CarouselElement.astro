@@ -9,15 +9,7 @@ const { imgName } = Astro.props;
 ---
 
 <div class="element-container">
-  <Image
-    src={imgName}
-    alt="a"
-    width={500}
-    height={400}
-    decoding="async"
-    format="avif"
-    quality="high"
-  />
+  <Image src={imgName} alt="a" decoding="async" quality="high" />
 </div>
 
 <style>
