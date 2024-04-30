@@ -10,7 +10,7 @@ const { imgName } = Astro.props;
 
 <div class="element-container">
   <!--<Image src={imgName} alt="a" decoding="async" format="avif" />-->
-  <img src={imgName} decoding="async">
+  <img src={imgName} decoding="async" />
 </div>
 
 <style>
@@ -30,6 +30,7 @@ const { imgName } = Astro.props;
   }
   .element-container img {
     object-fit: cover;
+    object-position: center;
     width: 100%;
     height: 100%;
   }
