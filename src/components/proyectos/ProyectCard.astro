@@ -9,7 +9,7 @@ const { imageCard, title, text } = Astro.props;
 ---
 
 <div class="card-container">
-  <img src={imageCard.src} alt="a" loading="lazy" />
+  <img src={imageCard} alt="a" loading="lazy" />
   <p class="title">{title}</p>
   <p class="text">{text}</p>
 </div>
@@ -35,7 +35,7 @@ const { imageCard, title, text } = Astro.props;
     font-family: "Montserrat", sans-serif;
   }
   .text {
-    font-size: 30px;
+    font-size: 20px;
     color: #000000b3;
   }
 </style>
