@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Image1 from "../assets/nosotros/1.jpg";
-import Image2 from "../assets/nosotros/2.jpg";
+import Image1 from "/public/nosotros/1.jpg";
+import Image2 from "/public/nosotros/2.jpg";
 ---
 
 <Layout title="Nosotros">
@@ -9,7 +9,7 @@ import Image2 from "../assets/nosotros/2.jpg";
     <section class="nosotros-section">
       <div class="image-container">
         <div class="image image-nosotros">
-          <img src={Image1.src} alt="a" loading="lazy" />
+          <img src={Image1.src} alt="" loading="lazy" />
         </div>
       </div>
       <div class="title">
@@ -41,7 +41,7 @@ import Image2 from "../assets/nosotros/2.jpg";
       </div>
       <div class="image-container">
         <div class="image image-director">
-          <img src={Image2.src} alt="a" loading="lazy" />
+          <img src={Image2.src} alt="" loading="lazy" />
         </div>
       </div>
       <div class="text-container">
