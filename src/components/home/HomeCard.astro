@@ -1,6 +1,4 @@
 ---
-import { Image, imageConfig } from "astro:assets";
-
 export interface Props {
   imageCard: any;
   title: string;
@@ -15,7 +13,6 @@ const { btnText } = Astro.props;
 ---
 
 <div class="card-container">
-  <!--<Image src={imageCard} alt="a" format="avif" />-->
   <img src={imageCard} alt="" loading="lazy" />
   <div class="card-content">
     <div class="text-content">

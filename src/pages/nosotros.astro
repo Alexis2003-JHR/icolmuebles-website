@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 import Layout from "../layouts/Layout.astro";
 import Image1 from "../assets/nosotros/1.jpg";
 import Image2 from "../assets/nosotros/2.jpg";
@@ -11,7 +9,7 @@ import Image2 from "../assets/nosotros/2.jpg";
     <section class="nosotros-section">
       <div class="image-container">
         <div class="image image-nosotros">
-          <Image src={Image1} alt="" format="avif" />
+          <img src={Image1.src} alt="a" loading="lazy" />
         </div>
       </div>
       <div class="title">
@@ -43,7 +41,7 @@ import Image2 from "../assets/nosotros/2.jpg";
       </div>
       <div class="image-container">
         <div class="image image-director">
-          <Image src={Image2} alt="" format="avif" />
+          <img src={Image2.src} alt="a" loading="lazy" />
         </div>
       </div>
       <div class="text-container">
