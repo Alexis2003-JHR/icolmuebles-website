@@ -49,12 +49,14 @@ const CommercialData = [
 
 <Layout title="Proyectos">
   <main-container>
-    <div class="selection-menu">
-      <div id="opt-1" class="option residencial-opt active">
-        <p>RESIDENCIAL</p>
-      </div>
-      <div id="opt-2" class="option commercial-opt">
-        <p>COMERCIAL</p>
+    <div class="selection-menu-container">
+      <div class="selection-menu">
+        <div id="opt-1" class="option residencial-opt active">
+          <p>RESIDENCIAL</p>
+        </div>
+        <div id="opt-2" class="option commercial-opt">
+          <p>COMERCIAL</p>
+        </div>
       </div>
     </div>
 
@@ -110,9 +112,14 @@ const CommercialData = [
     flex-direction: column;
     width: 100%;
   }
+  .selection-menu-container {
+    width: 100%;
+  }
   .selection-menu {
+    position: relative;
+    left: 30%;
+    width: fit-content;
     display: flex;
-    margin-top: 30px;
     justify-content: space-around;
   }
   .option {
@@ -150,9 +157,8 @@ const CommercialData = [
 
   .visual-residencial-container {
     display: flex;
-    width: 100%;
+    width: 90%;
     margin-top: 20px;
-    padding: 0px 50px;
   }
 
   .visual-residencial {

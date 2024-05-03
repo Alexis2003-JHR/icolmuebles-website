@@ -167,6 +167,9 @@
       ) {
         navContainer.classList.add("hidden");
       }
+      if (currentURL.includes("proyectos")) {
+        navContainer.classList.add("navbar-basic");
+      }
     }
 
     const nav = document.querySelector(".nav-bar-content");
@@ -223,15 +226,37 @@
   .hidden {
     display: none;
   }
-  .nav-bar-content {
+
+  .navbar-basic {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 80px;
+  }
+
+  .navbar-basic .ico {
+    width: 200px;
+  }
+
+  .navbar-basic .nav-bar-content {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: space-between;
+  }
+  .navbar-basic .nav-links {
+    display: flex;
+    width: auto;
+  }
+  .navbar-basic a {
+    padding: 0px 10px;
+  }
+
+  nav .nav-bar-content {
     height: 80%;
     width: 80%;
   }
-  .ico {
-    font-family: "Montserrat", sans-serif;
-    font: normal normal 800 20px Montserrat;
-  }
-  ul,
+  nav ul,
   a {
     list-style: none;
     text-decoration: none;
@@ -241,13 +266,13 @@
     opacity: 1;
     padding: 0px;
   }
-  li {
+  nav li {
     margin: 10px 0;
   }
-  li a.active-btn-nav {
+  nav li a.active-btn-nav {
     color: var(--brown-own);
   }
-  li a:hover {
+  nav li a:hover {
     color: var(--yellow-own);
     transition: 0.4s;
   }
