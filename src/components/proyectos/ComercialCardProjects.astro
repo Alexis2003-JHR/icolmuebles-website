@@ -1,0 +1,128 @@
+---
+import imgComercial1 from "/public/portafolio/residencial/casas-chia/1.jpg";
+import imgComercial2 from "/public/portafolio/residencial/modigliani/1.jpg";
+import imgComercial3 from "/public/portafolio/residencial/sausalito/1.jpg";
+import imgComercial4 from "/public/portafolio/residencial/subachoque/1.jpg";
+
+const ComercialData = [
+  {
+    imageCard: imgComercial1.src,
+    url: "/portafolio/balcony",
+    title: "Balcony 103 Constructora Hitos Urbanos",
+    text: "Carrera 116A 15A 70 60",
+  },
+  {
+    imageCard: imgComercial2.src,
+    url: "/portafolio/bosque-de-arrayan",
+    title: "Bosque de Arrayan Constructora Oikos",
+    text: "Carrera 116A 15A 70 60",
+  },
+  {
+    imageCard: imgComercial3.src,
+    url: "/portafolio/multiplaza",
+    title: "Carpimaderas LTDA C.C. Multiplaza",
+    text: "Carrera 116A 15A 70 60",
+  },
+  {
+    imageCard: imgComercial4.src,
+    url: "/portafolio/cumbrera",
+    title: "Colpatria Galias Cumbrera",
+    text: "Carrera 116A 15A 70 60",
+  },
+  {
+    imageCard: imgComercial1.src,
+    url: "/portafolio/hospital-cardiovascular",
+    title: "Hospital CardioVascular",
+    text: "Carrera 116A 15A 70 60",
+  },
+  {
+    imageCard: imgComercial2.src,
+    url: "/portafolio/naviera",
+    title: "Oficina Naviera",
+    text: "Carrera 116A 15A 70 60",
+  },
+  {
+    imageCard: imgComercial3.src,
+    url: "/portafolio/andalucia",
+    title: "Proyecto Promotora Andalucía",
+    text: "Carrera 116A 15A 70 60",
+    cost: "$200.000",
+  },
+  {
+    imageCard: imgComercial4.src,
+    url: "/portafolio/sakai",
+    title: "Proyecto Sakai Constructora Kyoto",
+    text: "Carrera 116A 15A 70 60",
+  },
+  {
+    imageCard: imgComercial1.src,
+    url: "/portafolio/vitrum",
+    title: "Vitrum Constructora Icono Urbano",
+    text: "Carrera 116A 15A 70 60",
+  },
+];
+---
+
+<div class="main-container">
+  {
+    ComercialData.map((item) => (
+      <div class="card-container">
+        <a href={item.url}>
+          <img src={item.imageCard} alt="a" loading="lazy" />
+        </a>
+        <p class="title">{item.title}</p>
+        <p class="text">{item.text}</p>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 40px 0px;
+  }
+  .card-container {
+    width: 33%;
+    margin-bottom: 30px;
+  }
+  .card-container img {
+    padding: 0px 30px;
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  .card-container img {
+    padding: 0px 30px;
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  .card-container img:hover {
+    opacity: 0.8;
+    transition: 0.6s;
+  }
+  .card-container:hover .title {
+    transition: 0.6s;
+    color: var(--yellow-own);
+  }
+  .card-container:hover .text {
+    transition: 0.6s;
+    color: var(--yellow-own);
+  }
+  .title {
+    font-size: 35px;
+    font-family: "Montserrat", sans-serif;
+    padding: 0px 30px;
+  }
+  .text {
+    font-size: 20px;
+    color: #000000b3;
+    padding: 0px 30px;
+  }
+</style>

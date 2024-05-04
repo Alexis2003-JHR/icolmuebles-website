@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProyectSection from "../components/proyectos/ProyectSection.astro";
-import Carousel from "../components/proyectos/Carousel.astro";
+import ResidencialCardProjects from "../components/proyectos/ResidencialCardProjects.astro";
+import ComercialCardProjects from "../components/proyectos/ComercialCardProjects.astro";
 
 import imgResidencial1 from "/public/proyectos/residencial/1.avif";
 import imgResidencial2 from "/public/proyectos/residencial/2.avif";
@@ -86,11 +87,11 @@ const CommercialData = [
       <ProyectSection data={ResidencialData} />
       <h3 class="title">PROYECTOS MODELO</h3>
       <div class="projects-section">
-        <Carousel />
+        <ResidencialCardProjects />
       </div>
     </div>
     <div id="section2" class="section" style="display: none;">
-      <ProyectSection data={CommercialData} />
+      <ComercialCardProjects />
     </div>
   </main-container>
 </Layout>
@@ -113,7 +114,6 @@ const CommercialData = [
           showSection(index + 1);
           var activeElement = document.querySelector(".active");
           if (activeElement != null) {
-            console.log(activeElement);
             activeElement.classList.remove("active");
           }
           option.classList.add("active");
