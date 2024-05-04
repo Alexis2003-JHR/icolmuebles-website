@@ -1,0 +1,32 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return [
+    //RESIDENCIAL
+    { params: { proyecto: "casas-chia" } },
+    { params: { proyecto: "modigliani" } },
+    { params: { proyecto: "sausalito" } },
+    { params: { proyecto: "subachoque" } },
+    //COMERCIAL
+    { params: { proyecto: "balcony" } },
+    { params: { proyecto: "bosque-de-arrayan" } },
+    { params: { proyecto: "multiplaza" } },
+    { params: { proyecto: "cumbrera" } },
+    { params: { proyecto: "hospital-cardiovascular" } },
+    { params: { proyecto: "naviera" } },
+    { params: { proyecto: "andalucia" } },
+    { params: { proyecto: "sakai" } },
+    { params: { proyecto: "vitrum" } },
+  ];
+}
+
+const { proyecto } = Astro.params;
+---
+
+<Layout title={proyecto}>
+  <main>
+    <h1>{proyecto}</h1>
+  </main>
+</Layout>

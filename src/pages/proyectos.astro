@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProyectSection from "../components/proyectos/ProyectSection.astro";
+import Carousel from "../components/proyectos/Carousel.astro";
 
 import imgResidencial1 from "/public/proyectos/residencial/1.avif";
 import imgResidencial2 from "/public/proyectos/residencial/2.avif";
@@ -83,6 +84,10 @@ const CommercialData = [
         ></video>
       </div>
       <ProyectSection data={ResidencialData} />
+      <h3 class="title">PROYECTOS MODELO</h3>
+      <div class="projects-section">
+        <Carousel />
+      </div>
     </div>
     <div id="section2" class="section" style="display: none;">
       <ProyectSection data={CommercialData} />
@@ -170,6 +175,10 @@ const CommercialData = [
   .section-residencial {
     display: flex;
     flex-wrap: wrap;
+  }
+  .title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
   }
 
   .visual-residencial-container {
