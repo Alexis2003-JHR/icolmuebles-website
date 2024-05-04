@@ -1,31 +1,24 @@
+---
+type dataImg = {
+  src: string;
+};
+
+export interface Props {
+  data: Array<string>;
+}
+
+const { data } = Astro.props;
+---
+
 <div class="scroll" style="--t:30s">
   <div class="scroll-content">
-    <div class="img-container-scroll">
-      <img src="/portafolio/residencial/modigliani/1.avif" alt="" />
-    </div>
-    <div class="img-container-scroll">
-      <img src="/portafolio/residencial/modigliani/2.avif" alt="" />
-    </div>
-
-    <div class="img-container-scroll">
-      <img src="/portafolio/residencial/modigliani/3.avif" alt="" />
-    </div>
-
-    <div class="img-container-scroll">
-      <img src="/portafolio/residencial/modigliani/4.avif" alt="" />
-    </div>
-
-    <div class="img-container-scroll">
-      <img src="/portafolio/residencial/modigliani/5.avif" alt="" />
-    </div>
-
-    <div class="img-container-scroll">
-      <img src="/portafolio/residencial/modigliani/6.avif" alt="" />
-    </div>
-
-    <div class="img-container-scroll">
-      <img src="/portafolio/residencial/modigliani/7.avif" alt="" />
-    </div>
+    {
+      data.map((src) => (
+        <div class="img-container-scroll">
+          <img src={src} alt="" />
+        </div>
+      ))
+    }
   </div>
 </div>
 
