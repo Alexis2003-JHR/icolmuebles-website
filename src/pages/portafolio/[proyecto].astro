@@ -26,7 +26,94 @@ const { proyecto } = Astro.params;
 ---
 
 <Layout title={proyecto}>
-  <main>
-    <h1>{proyecto}</h1>
-  </main>
+  <div class="main-container">
+    <div class="presentation-container section">
+      <div class="content">
+        <div class="head-content">
+          <h3 class="title">APARTAMENTO BALCONY</h3>
+          <p class="location">Balmoral Norte Av. NQS 14 - Bogotá DC.</p>
+        </div>
+        <div class="description">
+          <p class="detail">
+            Elegancia, confort y un estilo clásico es lo que caracteriza a este
+            excelente proyecto con acabados en madera que resaltan su estética
+            única y memorable.
+          </p>
+          <p class="designed-by-label">Diseñado por: Allan Dops</p>
+        </div>
+      </div>
+
+      <div class="img-container">
+        <div class="img">
+          <img src="/public/portafolio/residencial/sausalito/1.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<style>
+  body {
+    width: 100%;
+    display: block;
+  }
+  .main-container {
+    width: 100%;
+  }
+  .section {
+    width: 100%;
+    height: 95vh;
+  }
+  .presentation-container {
+    display: flex;
+  }
+  .content {
+    position: relative;
+    width: 50%;
+  }
+  .head-content {
+    position: absolute;
+    right: 0px;
+    width: 90%;
+  }
+  .title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 60px;
+    width: 80%;
+  }
+  .location {
+    font-size: 22px;
+  }
+
+  .description {
+    position: absolute;
+    width: 60%;
+    height: 40%;
+    right: 0px;
+    bottom: 10%;
+  }
+  .detail {
+    font-size: 25px;
+  }
+  .designed-by-label {
+    font-size: 22px;
+    position: absolute;
+    bottom: 0px;
+  }
+  .img-container {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+  }
+  .img {
+    width: 90%;
+    height: 100%;
+  }
+  .img-container img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+  }
+</style>

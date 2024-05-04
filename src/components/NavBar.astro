@@ -167,7 +167,10 @@
       ) {
         navContainer.classList.add("hidden");
       }
-      if (currentURL.includes("proyectos")) {
+      if (
+        currentURL.includes("proyectos") ||
+        currentURL.includes("portafolio")
+      ) {
         navContainer.classList.add("navbar-basic");
       }
     }
