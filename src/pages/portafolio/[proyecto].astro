@@ -2,27 +2,121 @@
 import type { GetStaticPaths } from "astro";
 import Layout from "../../layouts/Layout.astro";
 
+import imageChia from "/public/portafolio/residencial/chia/1.avif";
+import imageModigliani from "/public/portafolio/residencial/modigliani/1.avif";
+import imageSausalito from "/public/portafolio/residencial/sausalito/1.avif";
+import imageSubachoque from "/public/portafolio/residencial/subachoque/1.avif";
+
+import imageAndalucia from "/public/portafolio/comercial/andalucia/1.avif";
+import imageArrayan from "/public/portafolio/comercial/arrayan/1.avif";
+import imageBalcony from "/public/portafolio/comercial/balcony/1.avif";
+import imageCardio from "/public/portafolio/comercial/cardiovascular/1.avif";
+import cumbrera from "/public/portafolio/comercial/cumbrera/1.avif";
+import multiplaza from "/public/portafolio/comercial/mutiplaza/1.avif";
+import naviera from "/public/portafolio/comercial/naviera/1.avif";
+import sakai from "/public/portafolio/comercial/sakai/1.avif";
+import vitrum from "/public/portafolio/comercial/vitrum/1.avif";
+
 export function getStaticPaths() {
   return [
     //RESIDENCIAL
-    { params: { proyecto: "casas-chia" } },
-    { params: { proyecto: "modigliani" } },
-    { params: { proyecto: "sausalito" } },
-    { params: { proyecto: "subachoque" } },
+    {
+      params: { proyecto: "casas-chia" },
+      props: {
+        mainImage: imageChia.src,
+        titulo: "CASAS DE CHÍA",
+      },
+    },
+    {
+      params: { proyecto: "modigliani" },
+      props: {
+        mainImage: imageModigliani.src,
+        titulo: "MODIGLIANI",
+      },
+    },
+    {
+      params: { proyecto: "sausalito" },
+      props: {
+        mainImage: imageSausalito.src,
+        titulo: "SAUSALITO",
+      },
+    },
+    {
+      params: { proyecto: "subachoque" },
+      props: {
+        mainImage: imageSubachoque.src,
+        titulo: "SUBACHOQUE",
+      },
+    },
     //COMERCIAL
-    { params: { proyecto: "balcony" } },
-    { params: { proyecto: "bosque-de-arrayan" } },
-    { params: { proyecto: "multiplaza" } },
-    { params: { proyecto: "cumbrera" } },
-    { params: { proyecto: "hospital-cardiovascular" } },
-    { params: { proyecto: "naviera" } },
-    { params: { proyecto: "andalucia" } },
-    { params: { proyecto: "sakai" } },
-    { params: { proyecto: "vitrum" } },
+    {
+      params: { proyecto: "balcony" },
+      props: {
+        mainImage: imageBalcony.src,
+        titulo: "PROYECTO RESIDENCIAL BALCONY",
+      },
+    },
+    {
+      params: { proyecto: "bosque-de-arrayan" },
+      props: {
+        mainImage: imageArrayan.src,
+        titulo: "BOSQUES DE ARRAYAN",
+      },
+    },
+    {
+      params: { proyecto: "multiplaza" },
+      props: {
+        mainImage: multiplaza.src,
+        titulo: "CARPIMADERAS LTDA. C.C. MULTIPLAZA",
+      },
+    },
+    {
+      params: { proyecto: "cumbrera" },
+      props: {
+        mainImage: cumbrera.src,
+        titulo: "PROYECTO CUMBRERA COLPATRIA CONSTRUCTORA LAS GALIAS",
+      },
+    },
+    {
+      params: { proyecto: "hospital-cardiovascular" },
+      props: {
+        mainImage: imageCardio.src,
+        titulo: "HOSPITAL CARDIOVASCULAR",
+      },
+    },
+    {
+      params: { proyecto: "naviera" },
+      props: {
+        mainImage: naviera.src,
+        titulo: "OFICINAS NAVIERA",
+      },
+    },
+    {
+      params: { proyecto: "andalucia" },
+      props: {
+        mainImage: imageAndalucia.src,
+        titulo: "PROYECTO PROMOTORA ANDALUCÍA",
+      },
+    },
+    {
+      params: { proyecto: "sakai" },
+      props: {
+        mainImage: sakai.src,
+        titulo: "PROYECTO SAKAI CONTRUCTORA KYOTO",
+      },
+    },
+    {
+      params: { proyecto: "vitrum" },
+      props: {
+        mainImage: vitrum.src,
+        titulo: "VITRUM",
+      },
+    },
   ];
 }
 
 const { proyecto } = Astro.params;
+const { mainImage, titulo } = Astro.props;
 ---
 
 <Layout title={proyecto}>
@@ -30,7 +124,7 @@ const { proyecto } = Astro.params;
     <div class="presentation-container section">
       <div class="content">
         <div class="head-content">
-          <h3 class="title">APARTAMENTO BALCONY</h3>
+          <h3 class="title">{titulo}</h3>
           <p class="location">Balmoral Norte Av. NQS 14 - Bogotá DC.</p>
         </div>
         <div class="description">
@@ -45,7 +139,7 @@ const { proyecto } = Astro.params;
 
       <div class="img-container">
         <div class="img">
-          <img src="/public/portafolio/residencial/sausalito/1.jpg" alt="" />
+          <img src={mainImage} alt="" />
         </div>
       </div>
     </div>
