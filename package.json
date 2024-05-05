@@ -10,8 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.5.17",
     "@astrojs/check": "^0.5.10",
+    "astro": "^4.5.17",
+    "astro-integration-lottie": "^0.2.3",
+    "lottie-web": "^5.12.2",
     "typescript": "^5.4.4"
   }
 }
