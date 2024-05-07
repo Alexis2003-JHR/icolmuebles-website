@@ -5,6 +5,7 @@ type dataImg = {
   imageCard: any;
   title: string;
   text: string;
+  cost: string;
 };
 
 export interface Props {
@@ -21,6 +22,7 @@ const { data } = Astro.props;
         imageCard={item.imageCard}
         title={item.title}
         text={item.text}
+        cost={item.cost}
       />
     ))
   }

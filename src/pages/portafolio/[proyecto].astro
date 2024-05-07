@@ -1,0 +1,448 @@
+---
+import Carousel from "../../components/portafolio/Carousel.astro";
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return [
+    //RESIDENCIAL
+    {
+      params: { proyecto: "casas-chia" },
+      props: {
+        mainImage: "/portafolio/residencial/chia/1.avif",
+        titulo: "CASAS DE CHÍA",
+        arrayImg: [
+          "/portafolio/residencial/chia/1.avif",
+          "/portafolio/residencial/chia/2.avif",
+          "/portafolio/residencial/chia/3.avif",
+          "/portafolio/residencial/chia/4.avif",
+          "/portafolio/residencial/chia/5.avif",
+          "/portafolio/residencial/chia/6.avif",
+          "/portafolio/residencial/chia/7.avif",
+          "/portafolio/residencial/chia/8.avif",
+          "/portafolio/residencial/chia/9.avif",
+          "/portafolio/residencial/chia/10.avif",
+          "/portafolio/residencial/chia/11.avif",
+          "/portafolio/residencial/chia/12.avif",
+          "/portafolio/residencial/chia/13.avif",
+          "/portafolio/residencial/chia/14.avif",
+          "/portafolio/residencial/chia/15.avif",
+        ],
+      },
+    },
+    {
+      params: { proyecto: "modigliani" },
+      props: {
+        mainImage: "/portafolio/residencial/modigliani/1.avif",
+        titulo: "MODIGLIANI",
+        arrayImg: [
+          "/portafolio/residencial/modigliani/1.avif",
+          "/portafolio/residencial/modigliani/2.avif",
+          "/portafolio/residencial/modigliani/3.avif",
+          "/portafolio/residencial/modigliani/4.avif",
+          "/portafolio/residencial/modigliani/5.avif",
+          "/portafolio/residencial/modigliani/6.avif",
+        ],
+      },
+    },
+    {
+      params: { proyecto: "sausalito" },
+      props: {
+        mainImage: "/portafolio/residencial/sausalito/1.avif",
+        titulo: "SAUSALITO",
+        arrayImg: [
+          "/portafolio/residencial/sausalito/1.avif",
+          "/portafolio/residencial/sausalito/2.avif",
+          "/portafolio/residencial/sausalito/3.avif",
+          "/portafolio/residencial/sausalito/4.avif",
+          "/portafolio/residencial/sausalito/5.avif",
+          "/portafolio/residencial/sausalito/6.avif",
+          "/portafolio/residencial/sausalito/7.avif",
+          "/portafolio/residencial/sausalito/8.avif",
+          "/portafolio/residencial/sausalito/9.avif",
+          "/portafolio/residencial/sausalito/10.avif",
+          "/portafolio/residencial/sausalito/11.avif",
+          "/portafolio/residencial/sausalito/12.avif",
+          "/portafolio/residencial/sausalito/13.avif",
+          "/portafolio/residencial/sausalito/14.avif",
+          "/portafolio/residencial/sausalito/15.avif",
+          "/portafolio/residencial/sausalito/16.avif",
+          "/portafolio/residencial/sausalito/17.avif",
+          "/portafolio/residencial/sausalito/18.avif",
+          "/portafolio/residencial/sausalito/19.avif",
+          "/portafolio/residencial/sausalito/20.avif",
+          "/portafolio/residencial/sausalito/21.avif",
+          "/portafolio/residencial/sausalito/22.avif",
+          "/portafolio/residencial/sausalito/23.avif",
+          "/portafolio/residencial/sausalito/24.avif",
+          "/portafolio/residencial/sausalito/25.avif",
+        ],
+      },
+    },
+    {
+      params: { proyecto: "subachoque" },
+      props: {
+        mainImage: "/portafolio/residencial/subachoque/1.avif",
+        titulo: "SUBACHOQUE",
+        arrayImg: [
+          "/portafolio/residencial/subachoque/1.avif",
+          "/portafolio/residencial/subachoque/2.avif",
+          "/portafolio/residencial/subachoque/3.avif",
+          "/portafolio/residencial/subachoque/4.avif",
+          "/portafolio/residencial/subachoque/5.avif",
+          "/portafolio/residencial/subachoque/6.avif",
+          "/portafolio/residencial/subachoque/7.avif",
+          "/portafolio/residencial/subachoque/8.avif",
+          "/portafolio/residencial/subachoque/9.avif",
+          "/portafolio/residencial/subachoque/10.avif",
+          "/portafolio/residencial/subachoque/11.avif",
+          "/portafolio/residencial/subachoque/12.avif",
+          "/portafolio/residencial/subachoque/13.avif",
+          "/portafolio/residencial/subachoque/14.avif",
+          "/portafolio/residencial/subachoque/15.avif",
+          "/portafolio/residencial/subachoque/16.avif",
+        ],
+      },
+    },
+    //COMERCIAL
+    {
+      params: { proyecto: "balcony" },
+      props: {
+        mainImage: "/portafolio/comercial/balcony/1.avif",
+        titulo: "PROYECTO RESIDENCIAL BALCONY",
+        arrayImg: [
+          "/portafolio/comercial/balcony/1.avif",
+          "/portafolio/comercial/balcony/2.avif",
+          "/portafolio/comercial/balcony/3.avif",
+          "/portafolio/comercial/balcony/4.avif",
+          "/portafolio/comercial/balcony/5.avif",
+          "/portafolio/comercial/balcony/6.avif",
+          "/portafolio/comercial/balcony/7.avif",
+          "/portafolio/comercial/balcony/8.avif",
+          "/portafolio/comercial/balcony/9.avif",
+          "/portafolio/comercial/balcony/10.avif",
+          "/portafolio/comercial/balcony/11.avif",
+          "/portafolio/comercial/balcony/12.avif",
+          "/portafolio/comercial/balcony/13.avif",
+          "/portafolio/comercial/balcony/14.avif",
+          "/portafolio/comercial/balcony/15.avif",
+          "/portafolio/comercial/balcony/16.avif",
+        ],
+      },
+    },
+    {
+      params: { proyecto: "bosque-de-arrayan" },
+      props: {
+        mainImage: "/portafolio/comercial/arrayan/1.avif",
+        titulo: "BOSQUES DE ARRAYAN",
+        arrayImg: [
+          "/portafolio/comercial/arrayan/1.avif",
+          "/portafolio/comercial/arrayan/2.avif",
+          "/portafolio/comercial/arrayan/3.avif",
+          "/portafolio/comercial/arrayan/4.avif",
+          "/portafolio/comercial/arrayan/5.avif",
+          "/portafolio/comercial/arrayan/6.avif",
+          "/portafolio/comercial/arrayan/7.avif",
+          "/portafolio/comercial/arrayan/8.avif",
+          "/portafolio/comercial/arrayan/9.avif",
+          "/portafolio/comercial/arrayan/10.avif",
+          "/portafolio/comercial/arrayan/11.avif",
+          "/portafolio/comercial/arrayan/12.avif",
+          "/portafolio/comercial/arrayan/13.avif",
+          "/portafolio/comercial/arrayan/14.avif",
+          "/portafolio/comercial/arrayan/15.avif",
+          "/portafolio/comercial/arrayan/16.avif",
+          "/portafolio/comercial/arrayan/17.avif",
+          "/portafolio/comercial/arrayan/18.avif",
+          "/portafolio/comercial/arrayan/19.avif",
+          "/portafolio/comercial/arrayan/20.avif",
+          "/portafolio/comercial/arrayan/21.avif",
+          "/portafolio/comercial/arrayan/22.avif",
+          "/portafolio/comercial/arrayan/23.avif",
+          "/portafolio/comercial/arrayan/24.avif",
+          "/portafolio/comercial/arrayan/25.avif",
+          "/portafolio/comercial/arrayan/26.avif",
+        ],
+      },
+    },
+    {
+      params: { proyecto: "multiplaza" },
+      props: {
+        mainImage: "/portafolio/comercial/multiplaza/1.avif",
+        titulo: "CARPIMADERAS LTDA. C.C. MULTIPLAZA",
+        arrayImg: [
+          "/portafolio/comercial/multiplaza/1.avif",
+          "/portafolio/comercial/multiplaza/2.avif",
+          "/portafolio/comercial/multiplaza/3.avif",
+          "/portafolio/comercial/multiplaza/4.avif",
+          "/portafolio/comercial/multiplaza/5.avif",
+          "/portafolio/comercial/multiplaza/6.avif",
+          "/portafolio/comercial/multiplaza/7.avif",
+          "/portafolio/comercial/multiplaza/8.avif",
+          "/portafolio/comercial/multiplaza/9.avif",
+          "/portafolio/comercial/multiplaza/10.avif",
+        ],
+      },
+    },
+    {
+      params: { proyecto: "cumbrera" },
+      props: {
+        mainImage: "/portafolio/comercial/cumbrera/1.avif",
+        titulo: "PROYECTO CUMBRERA COLPATRIA CONSTRUCTORA LAS GALIAS",
+        arrayImg: [
+          "/portafolio/comercial/cumbrera/1.avif",
+          "/portafolio/comercial/cumbrera/2.avif",
+          "/portafolio/comercial/cumbrera/3.avif",
+          "/portafolio/comercial/cumbrera/4.avif",
+          "/portafolio/comercial/cumbrera/5.avif",
+          "/portafolio/comercial/cumbrera/6.avif",
+          "/portafolio/comercial/cumbrera/7.avif",
+          "/portafolio/comercial/cumbrera/8.avif",
+          "/portafolio/comercial/cumbrera/9.avif",
+          "/portafolio/comercial/cumbrera/10.avif",
+          "/portafolio/comercial/cumbrera/11.avif",
+          "/portafolio/comercial/cumbrera/12.avif",
+          "/portafolio/comercial/cumbrera/13.avif",
+          "/portafolio/comercial/cumbrera/14.avif",
+          "/portafolio/comercial/cumbrera/15.avif",
+          "/portafolio/comercial/cumbrera/16.avif",
+          "/portafolio/comercial/cumbrera/17.avif",
+          "/portafolio/comercial/cumbrera/18.avif",
+          "/portafolio/comercial/cumbrera/19.avif",
+          "/portafolio/comercial/cumbrera/20.avif",
+          "/portafolio/comercial/cumbrera/21.avif",
+        ],
+      },
+    },
+    {
+      params: { proyecto: "hospital-cardiovascular" },
+      props: {
+        mainImage: "/portafolio/comercial/cardiovascular/1.avif",
+        titulo: "HOSPITAL CARDIOVASCULAR",
+        arrayImg: [
+          "/portafolio/comercial/cardiovascular/1.avif",
+          "/portafolio/comercial/cardiovascular/2.avif",
+          "/portafolio/comercial/cardiovascular/3.avif",
+          "/portafolio/comercial/cardiovascular/4.avif",
+          "/portafolio/comercial/cardiovascular/5.avif",
+          "/portafolio/comercial/cardiovascular/6.avif",
+          "/portafolio/comercial/cardiovascular/7.avif",
+          "/portafolio/comercial/cardiovascular/8.avif",
+          "/portafolio/comercial/cardiovascular/9.avif",
+          "/portafolio/comercial/cardiovascular/10.avif",
+          "/portafolio/comercial/cardiovascular/11.avif",
+          "/portafolio/comercial/cardiovascular/12.avif",
+          "/portafolio/comercial/cardiovascular/13.avif",
+          "/portafolio/comercial/cardiovascular/14.avif",
+          "/portafolio/comercial/cardiovascular/15.avif",
+          "/portafolio/comercial/cardiovascular/16.avif",
+          "/portafolio/comercial/cardiovascular/17.avif",
+          "/portafolio/comercial/cardiovascular/18.avif",
+          "/portafolio/comercial/cardiovascular/19.avif",
+          "/portafolio/comercial/cardiovascular/20.avif",
+          "/portafolio/comercial/cardiovascular/21.avif",
+          "/portafolio/comercial/cardiovascular/22.avif",
+        ],
+      },
+    },
+    {
+      params: { proyecto: "naviera" },
+      props: {
+        mainImage: "/portafolio/comercial/naviera/1.avif",
+        titulo: "OFICINAS NAVIERA",
+        arrayImg: [
+          "/portafolio/comercial/naviera/1.avif",
+          "/portafolio/comercial/naviera/2.avif",
+          "/portafolio/comercial/naviera/3.avif",
+          "/portafolio/comercial/naviera/4.avif",
+          "/portafolio/comercial/naviera/5.avif",
+          "/portafolio/comercial/naviera/6.avif",
+          "/portafolio/comercial/naviera/7.avif",
+          "/portafolio/comercial/naviera/8.avif",
+          "/portafolio/comercial/naviera/9.avif",
+          "/portafolio/comercial/naviera/10.avif",
+          "/portafolio/comercial/naviera/11.avif",
+          "/portafolio/comercial/naviera/12.avif",
+          "/portafolio/comercial/naviera/13.avif",
+          "/portafolio/comercial/naviera/14.avif",
+        ],
+      },
+    },
+    {
+      params: { proyecto: "andalucia" },
+      props: {
+        mainImage: "/portafolio/comercial/andalucia/1.avif",
+        titulo: "PROYECTO PROMOTORA ANDALUCÍA",
+        arrayImg: [
+          "/portafolio/comercial/andalucia/1.avif",
+          "/portafolio/comercial/andalucia/2.avif",
+          "/portafolio/comercial/andalucia/3.avif",
+          "/portafolio/comercial/andalucia/4.avif",
+          "/portafolio/comercial/andalucia/5.avif",
+          "/portafolio/comercial/andalucia/6.avif",
+          "/portafolio/comercial/andalucia/7.avif",
+          "/portafolio/comercial/andalucia/8.avif",
+          "/portafolio/comercial/andalucia/9.avif",
+          "/portafolio/comercial/andalucia/10.avif",
+          "/portafolio/comercial/andalucia/11.avif",
+          "/portafolio/comercial/andalucia/12.avif",
+          "/portafolio/comercial/andalucia/13.avif",
+          "/portafolio/comercial/andalucia/14.avif",
+          "/portafolio/comercial/andalucia/15.avif",
+          "/portafolio/comercial/andalucia/16.avif",
+          "/portafolio/comercial/andalucia/17.avif",
+          "/portafolio/comercial/andalucia/18.avif",
+          "/portafolio/comercial/andalucia/19.avif",
+          "/portafolio/comercial/andalucia/20.avif",
+          "/portafolio/comercial/andalucia/21.avif",
+          "/portafolio/comercial/andalucia/22.avif",
+          "/portafolio/comercial/andalucia/23.avif",
+          "/portafolio/comercial/andalucia/24.avif",
+          "/portafolio/comercial/andalucia/25.avif",
+        ],
+      },
+    },
+    {
+      params: { proyecto: "sakai" },
+      props: {
+        mainImage: "/portafolio/comercial/sakai/1.avif",
+        titulo: "PROYECTO SAKAI CONTRUCTORA KYOTO",
+        arrayImg: [
+          "/portafolio/comercial/sakai/1.avif",
+          "/portafolio/comercial/sakai/2.avif",
+          "/portafolio/comercial/sakai/3.avif",
+          "/portafolio/comercial/sakai/4.avif",
+          "/portafolio/comercial/sakai/5.avif",
+          "/portafolio/comercial/sakai/6.avif",
+          "/portafolio/comercial/sakai/7.avif",
+          "/portafolio/comercial/sakai/8.avif",
+          "/portafolio/comercial/sakai/9.avif",
+          "/portafolio/comercial/sakai/10.avif",
+          "/portafolio/comercial/sakai/11.avif",
+          "/portafolio/comercial/sakai/12.avif",
+          "/portafolio/comercial/sakai/13.avif",
+          "/portafolio/comercial/sakai/14.avif",
+          "/portafolio/comercial/sakai/15.avif",
+          "/portafolio/comercial/sakai/16.avif",
+        ],
+      },
+    },
+    {
+      params: { proyecto: "vitrum" },
+      props: {
+        mainImage: "/portafolio/comercial/vitrum/1.avif",
+        titulo: "VITRUM",
+        arrayImg: [
+          "/portafolio/comercial/vitrum/1.avif",
+          "/portafolio/comercial/vitrum/2.avif",
+          "/portafolio/comercial/vitrum/3.avif",
+          "/portafolio/comercial/vitrum/4.avif",
+          "/portafolio/comercial/vitrum/5.avif",
+          "/portafolio/comercial/vitrum/6.avif",
+          "/portafolio/comercial/vitrum/7.avif",
+          "/portafolio/comercial/vitrum/8.avif",
+        ],
+      },
+    },
+  ];
+}
+
+const { proyecto } = Astro.params;
+const { mainImage, titulo, arrayImg } = Astro.props;
+---
+
+<Layout title={proyecto}>
+  <div class="main-container">
+    <div class="presentation-container section">
+      <div class="content">
+        <div class="head-content">
+          <h3 class="title">{titulo}</h3>
+          <p class="location">Balmoral Norte Av. NQS 14 - Bogotá DC.</p>
+        </div>
+        <div class="description">
+          <p class="detail">
+            Elegancia, confort y un estilo clásico es lo que caracteriza a este
+            excelente proyecto con acabados en madera que resaltan su estética
+            única y memorable.
+          </p>
+          <p class="designed-by-label">Diseñado por: Allan Dops</p>
+        </div>
+      </div>
+
+      <div class="img-container">
+        <div class="img">
+          <img src={mainImage} alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <Carousel data={arrayImg} />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  body {
+    width: 100%;
+    display: block;
+  }
+  .main-container {
+    width: 100%;
+  }
+  .section {
+    width: 100%;
+    height: 95vh;
+  }
+  .presentation-container {
+    display: flex;
+  }
+  .content {
+    position: relative;
+    width: 50%;
+  }
+  .head-content {
+    position: absolute;
+    right: 0px;
+    width: 90%;
+  }
+  .title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 60px;
+    width: 80%;
+  }
+  .location {
+    font-size: 22px;
+  }
+
+  .description {
+    position: absolute;
+    width: 60%;
+    height: 40%;
+    right: 0px;
+    bottom: 10%;
+  }
+  .detail {
+    font-size: 25px;
+  }
+  .designed-by-label {
+    font-size: 22px;
+    position: absolute;
+    bottom: 0px;
+  }
+  .img-container {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+  }
+  .img {
+    width: 90%;
+    height: 100%;
+  }
+  .img-container img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+  }
+</style>

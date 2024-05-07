@@ -1,68 +1,75 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProyectSection from "../components/proyectos/ProyectSection.astro";
+import ResidencialCardProjects from "../components/proyectos/ResidencialCardProjects.astro";
+import ComercialCardProjects from "../components/proyectos/ComercialCardProjects.astro";
 
 import imgResidencial1 from "/public/proyectos/residencial/1.avif";
 import imgResidencial2 from "/public/proyectos/residencial/2.avif";
 import imgResidencial3 from "/public/proyectos/residencial/3.avif";
-
-import imgComercial1 from "/public/proyectos/comercial/1.jpg";
-import imgComercial2 from "/public/proyectos/comercial/2.jpg";
-import imgComercial3 from "/public/proyectos/comercial/3.jpg";
+import imgResidencial4 from "/public/proyectos/residencial/4.avif";
+import imgResidencial5 from "/public/proyectos/residencial/5.avif";
 
 const ResidencialData = [
   {
     imageCard: imgResidencial1.src,
-    title: "Sala Warm In Wood",
-    text: "Residencial",
-  },
-  {
-    imageCard: imgResidencial3.src,
-    title: "Sala Warm In Wood",
-    text: "Residencial",
+    title: "Closet",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque arcu vel maximus dapibus. Aliquam sagittis orci vel tristique accumsan.",
+    cost: "$200.000",
   },
   {
     imageCard: imgResidencial2.src,
-    title: "Sala Warm In Wood",
-    text: "Residencial",
-  },
-];
-
-const CommercialData = [
-  {
-    imageCard: imgComercial1.src,
-    title: "Sala Warm In Wood",
-    text: "Commercial",
+    title: "Cocina",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque arcu vel maximus dapibus. Aliquam sagittis orci vel tristique accumsan.",
+    cost: "$200.000",
   },
   {
-    imageCard: imgComercial2.src,
-    title: "Sala Warm In Wood",
-    text: "Commercial",
+    imageCard: imgResidencial3.src,
+    title: "Mueble Laundry",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque arcu vel maximus dapibus. Aliquam sagittis orci vel tristique accumsan.",
+    cost: "$200.000",
   },
   {
-    imageCard: imgComercial3.src,
-    title: "Sala Warm In Wood",
-    text: "Commercial",
+    imageCard: imgResidencial4.src,
+    title: "Lavamanos",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque arcu vel maximus dapibus. Aliquam sagittis orci vel tristique accumsan.",
+    cost: "$200.000",
+  },
+  {
+    imageCard: imgResidencial5.src,
+    title: "Baño",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque arcu vel maximus dapibus. Aliquam sagittis orci vel tristique accumsan.",
+    cost: "$200.000",
   },
 ];
 ---
 
 <Layout title="Proyectos">
   <main-container>
-    <div class="selection-menu">
-      <div id="opt-1" class="option residencial-opt active">
-        <p>RESIDENCIAL</p>
-      </div>
-      <div id="opt-2" class="option commercial-opt">
-        <p>COMERCIAL</p>
+    <div class="selection-menu-container">
+      <div class="selection-menu">
+        <div id="opt-1" class="option residencial-opt active">
+          <p>RESIDENCIAL</p>
+        </div>
+        <div id="opt-2" class="option commercial-opt">
+          <p>COMERCIAL</p>
+        </div>
       </div>
     </div>
 
-    <div id="section1" class="section">
+    <div id="section1" class="section section-residencial">
+      <div class="visual-residencial-container">
+        <video src="/render.mp4" autoplay loop muted class="visual-residencial"
+        ></video>
+      </div>
       <ProyectSection data={ResidencialData} />
+      <h3 class="title">PROYECTOS MODELO</h3>
+      <div class="projects-section">
+        <ResidencialCardProjects />
+      </div>
     </div>
     <div id="section2" class="section" style="display: none;">
-      <ProyectSection data={CommercialData} />
+      <ComercialCardProjects />
     </div>
   </main-container>
 </Layout>
@@ -85,7 +92,6 @@ const CommercialData = [
           showSection(index + 1);
           var activeElement = document.querySelector(".active");
           if (activeElement != null) {
-            console.log(activeElement);
             activeElement.classList.remove("active");
           }
           option.classList.add("active");
@@ -106,9 +112,14 @@ const CommercialData = [
     flex-direction: column;
     width: 100%;
   }
+  .selection-menu-container {
+    width: 100%;
+  }
   .selection-menu {
+    position: relative;
+    left: 30%;
+    width: fit-content;
     display: flex;
-    margin-top: 30px;
     justify-content: space-around;
   }
   .option {
@@ -138,5 +149,23 @@ const CommercialData = [
     display: flex;
     width: 100%;
     justify-content: center;
+  }
+  .section-residencial {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+  }
+
+  .visual-residencial-container {
+    display: flex;
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  .visual-residencial {
+    width: 100%;
   }
 </style>
