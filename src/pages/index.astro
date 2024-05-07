@@ -30,7 +30,7 @@ const contentMap = {
 
 <Layout title="Home">
   <video id="intro-video" autoplay muted onended="this.style.transition = 'opacity 2s ease-out'; this.style.opacity = 0; setTimeout(() => { this.style.display = 'none'; }, 2000);">
-    <source src="/animations/enter-animation.mp4" type="video/mp4" />
+    <source id="video-source" src="/animations/enter-animation.mp4" type="video/mp4" />
   </video>
 
   <section><Carousel /></section>
@@ -56,6 +56,17 @@ const contentMap = {
   </section>
 </Layout>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('intro-video') as HTMLVideoElement;
+    const source = document.getElementById('video-source') as HTMLSourceElement;
+    if (window.innerWidth <= 850) {
+      source.src = '/animations/enter-animation-mobile.mp4';
+      video.load();
+    }
+  });
+</script>
+
 <style>
   body {
     width: 100%;
@@ -77,6 +88,13 @@ const contentMap = {
   }
 
   @media screen and (max-width: 850px) {
+    #intro-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      z-index: 9999;
+    }
     .second-section {
       display: flex;
       flex-wrap: wrap;
