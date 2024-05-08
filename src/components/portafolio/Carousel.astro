@@ -35,7 +35,7 @@ const { data } = Astro.props;
   }
   @keyframes animate {
     0% {
-      transform: translateX(100%);
+      transform: translateX(0%);
     }
     100% {
       transform: translateX(-100%);
@@ -50,5 +50,11 @@ const { data } = Astro.props;
   }
   .img-container-scroll {
     height: 900px;
+  }
+
+  @media screen and (max-width: 850px) {
+    .img-container-scroll {
+      height: 600px;
+    }
   }
 </style>
