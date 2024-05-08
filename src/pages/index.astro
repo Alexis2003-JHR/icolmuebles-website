@@ -29,8 +29,12 @@ const contentMap = {
 ---
 
 <Layout title="Home">
-  <div id="animation-container">
-    <LottieAnimation src="/animations/enter-animation.json" id="my-animation" loop={false} player="light"/>
+  <div id="animation-desk-container">
+    <LottieAnimation src="/animations/enter-animation.json" id="animation-desk" loop={false} player="light"/>
+  </div>
+
+  <div id="animation-mobile-container">
+    <LottieAnimation src="/animations/enter-animation-mobile.json" id="animation-mobile" loop={false} player="light"/>
   </div>
 
   <section><Carousel /></section>
@@ -58,15 +62,33 @@ const contentMap = {
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const animation = document.getElementById("animation-container");
-    if(animation !== null) {
+    const animationDesk = document.getElementById("animation-desk-container");
+    if(animationDesk !== null) {
       setTimeout(() => {
-        animation.style.opacity = "0";
-        animation.style.transition = "opacity 1s ease-out";
+        animationDesk.style.opacity = "0";
+        animationDesk.style.transition = "opacity 1s ease-out";
       }, 3500);
       setTimeout(() => {
-        animation.style.display = "none";
+        animationDesk.style.display = "none";
       }, 4500);
+    }
+
+    if (window.innerWidth <= 850) {
+      if(animationDesk !== null) {
+        animationDesk.style.display = "none";
+      }
+      const animationMobile = document.getElementById("animation-mobile-container");
+      if(animationMobile !== null) {
+        animationMobile.style.display = "block";
+
+        setTimeout(() => {
+          animationMobile.style.opacity = "0";
+          animationMobile.style.transition = "opacity 1s ease-out";
+        }, 1800);
+        setTimeout(() => {
+          animationMobile.style.display = "none";
+        }, 2300);
+        }
     }
   })
 </script>
@@ -78,7 +100,17 @@ const contentMap = {
     display: block;
   }
 
-  #animation-container {
+  #animation-desk-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 80vh;
+    z-index: 9999;
+  }
+
+  #animation-mobile-container {
+    display: none;
     position: absolute;
     top: 0px;
     left: 0px;
