@@ -29,9 +29,13 @@ const contentMap = {
 ---
 
 <Layout title="Home">
-  <video id="intro-video" autoplay muted onended="this.style.transition = 'opacity 2s ease-out'; this.style.opacity = 0; setTimeout(() => { this.style.display = 'none'; }, 2000);">
-    <source id="video-source" src="/animations/enter-animation.mp4" type="video/mp4" />
-  </video>
+  <div id="animation-desk-container">
+    <LottieAnimation src="/animations/enter-animation.json" id="animation-desk" loop={false} player="light"/>
+  </div>
+
+  <div id="animation-mobile-container">
+    <LottieAnimation src="/animations/enter-animation-mobile.json" id="animation-mobile" loop={false} player="light"/>
+  </div>
 
   <section><Carousel /></section>
 
@@ -57,14 +61,36 @@ const contentMap = {
 </Layout>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const video = document.getElementById('intro-video') as HTMLVideoElement;
-    const source = document.getElementById('video-source') as HTMLSourceElement;
-    if (window.innerWidth <= 850) {
-      source.src = '/animations/enter-animation-mobile.mp4';
-      video.load();
+  document.addEventListener("astro:page-load", () => {
+    const animationDesk = document.getElementById("animation-desk-container");
+    if(animationDesk !== null) {
+      setTimeout(() => {
+        animationDesk.style.opacity = "0";
+        animationDesk.style.transition = "opacity 1s ease-out";
+      }, 3500);
+      setTimeout(() => {
+        animationDesk.style.display = "none";
+      }, 4500);
     }
-  });
+
+    if (window.innerWidth <= 850) {
+      if(animationDesk !== null) {
+        animationDesk.style.display = "none";
+      }
+      const animationMobile = document.getElementById("animation-mobile-container");
+      if(animationMobile !== null) {
+        animationMobile.style.display = "block";
+
+        setTimeout(() => {
+          animationMobile.style.opacity = "0";
+          animationMobile.style.transition = "opacity 1s ease-out";
+        }, 1800);
+        setTimeout(() => {
+          animationMobile.style.display = "none";
+        }, 2300);
+        }
+    }
+  })
 </script>
 
 <style>
@@ -74,11 +100,22 @@ const contentMap = {
     display: block;
   }
 
-  #intro-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
+  #animation-desk-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     width: 100%;
+    height: 80vh;
+    z-index: 9999;
+  }
+
+  #animation-mobile-container {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 80vh;
     z-index: 9999;
   }
 
