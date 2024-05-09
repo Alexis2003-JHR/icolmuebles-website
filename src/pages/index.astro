@@ -30,11 +30,21 @@ const contentMap = {
 
 <Layout title="Home">
   <div id="animation-desk-container">
-    <LottieAnimation src="/animations/enter-animation.json" id="animation-desk" loop={false} player="light"/>
+    <LottieAnimation
+      src="/animations/enter-animation.json"
+      id="animation-desk"
+      loop={false}
+      player="light"
+    />
   </div>
 
   <div id="animation-mobile-container">
-    <LottieAnimation src="/animations/enter-animation-mobile.json" id="animation-mobile" loop={false} player="light"/>
+    <LottieAnimation
+      src="/animations/enter-animation-mobile.json"
+      id="animation-mobile"
+      loop={false}
+      player="light"
+    />
   </div>
 
   <section><Carousel /></section>
@@ -63,7 +73,10 @@ const contentMap = {
 <script>
   document.addEventListener("astro:page-load", () => {
     const animationDesk = document.getElementById("animation-desk-container");
-    if(animationDesk !== null) {
+    if (animationDesk !== null) {
+      setTimeout(() => {
+        animationDesk.style.background = "transparent";
+      }, 1000);
       setTimeout(() => {
         animationDesk.style.opacity = "0";
         animationDesk.style.transition = "opacity 1s ease-out";
@@ -74,13 +87,17 @@ const contentMap = {
     }
 
     if (window.innerWidth <= 850) {
-      if(animationDesk !== null) {
+      if (animationDesk !== null) {
         animationDesk.style.display = "none";
       }
-      const animationMobile = document.getElementById("animation-mobile-container");
-      if(animationMobile !== null) {
+      const animationMobile = document.getElementById(
+        "animation-mobile-container"
+      );
+      if (animationMobile !== null) {
         animationMobile.style.display = "block";
-
+        setTimeout(() => {
+          animationMobile.style.background = "transparent";
+        }, 1000);
         setTimeout(() => {
           animationMobile.style.opacity = "0";
           animationMobile.style.transition = "opacity 1s ease-out";
@@ -88,9 +105,9 @@ const contentMap = {
         setTimeout(() => {
           animationMobile.style.display = "none";
         }, 2300);
-        }
+      }
     }
-  })
+  });
 </script>
 
 <style>
@@ -102,16 +119,18 @@ const contentMap = {
 
   #animation-desk-container {
     position: absolute;
+    background-color: var(--white-own);
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     z-index: 9999;
   }
 
   #animation-mobile-container {
     display: none;
     position: absolute;
+    background-color: var(--white-own);
     top: 0px;
     left: 0px;
     width: 100%;
