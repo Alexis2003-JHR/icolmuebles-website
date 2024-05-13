@@ -67,7 +67,9 @@ const contentMap = {
       <div class="btn-section">
         <button>Ver proyectos</button>
       </div>
-      <img src="/home/arrow.png" alt="" class="arrow" />
+      <div class="arrow-section">
+        <img src="/home/arrow.png" alt="" class="arrow" />
+      </div>
     </div>
     <div class="second-section"></div>
   </section>
@@ -152,7 +154,6 @@ const contentMap = {
   }
 
   .first-section {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     height: 60%;
@@ -161,6 +162,7 @@ const contentMap = {
 
   .info-section {
     width: 60%;
+    height: fit-content;
   }
 
   .title h3 {
@@ -180,7 +182,7 @@ const contentMap = {
 
   .btn-section {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
     width: 40%;
   }
@@ -206,10 +208,30 @@ const contentMap = {
     cursor: pointer;
   }
 
+  .arrow-section {
+    position: relative;
+    display: flex;
+    align-items: start;
+    height: 50%;
+    width: 100%;
+  }
+
   .arrow {
     position: absolute;
-    bottom: 25%;
-    left: 50%;
+    top: 40px;
+    left: 45%;
+  }
+
+  @media screen and (max-width: 1450px) {
+    .arrow {
+      left: 35%;
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    .arrow {
+      left: 20%;
+    }
   }
 
   @media screen and (max-width: 850px) {
