@@ -49,24 +49,27 @@ const contentMap = {
 
   <section><Carousel /></section>
 
-  <section class="second-section">
-    <HomeCard
-      imageCard={Image1.src}
-      title={contentMap.card1.title}
-      text={contentMap.card1.text}
-      btnText={contentMap.card1.btnText}
-    />
-    <MiddleSection
-      title={contentMap.middle.title}
-      text={contentMap.middle.text}
-      subText={contentMap.middle.subText}
-    />
-    <HomeCard
-      imageCard={Image2.src}
-      title={contentMap.card2.title}
-      text={contentMap.card2.text}
-      btnText={contentMap.card2.btnText}
-    />
+  <section class="section">
+    <div class="first-section">
+      <div class="info-section">
+        <div class="title">
+          <h3>Somos experiencia, <br /><span>somos calidad.</span></h3>
+        </div>
+        <div class="text">
+          <p>
+            Creamos soluciones empresariales y residenciales con la mejor
+            calidad, con el mejor servicio y con la mejor eficiencia. Conoce
+            nuestros asombrosos proyectos residenciales, descubre los magníficos
+            proyectos comerciales en los que hemos trabajado!
+          </p>
+        </div>
+      </div>
+      <div class="btn-section">
+        <button>Ver proyectos</button>
+      </div>
+      <img src="/home/arrow.png" alt="" class="arrow" />
+    </div>
+    <div class="second-section"></div>
   </section>
 </Layout>
 
@@ -143,6 +146,72 @@ const contentMap = {
     height: 100vh;
   }
 
+  .section {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .first-section {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    height: 60%;
+    padding: 40px 60px;
+  }
+
+  .info-section {
+    width: 60%;
+  }
+
+  .title h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 40px;
+    margin-top: 50px;
+  }
+
+  .title h3 span {
+    color: var(--yellow-own);
+  }
+
+  .first-section .text {
+    margin-top: 60px;
+    font-size: 25px;
+  }
+
+  .btn-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+  }
+
+  .btn-section button {
+    border: none;
+    background-color: transparent;
+    border: 3px solid #6a6a6a;
+    padding: 10px 60px;
+    color: #6a6a6a;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    box-shadow: 0px 3px 6px #00000029;
+    text-shadow: 0px 3px 6px #00000029;
+  }
+
+  .btn-section button:hover {
+    border: 3px solid var(--yellow-own);
+    background-color: var(--yellow-own);
+    color: var(--white-own);
+    transition: 0.8s;
+    cursor: pointer;
+  }
+
+  .arrow {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+  }
+
   @media screen and (max-width: 850px) {
     #intro-video {
       position: fixed;
@@ -150,10 +219,6 @@ const contentMap = {
       bottom: 0;
       height: 100vh;
       z-index: 9999;
-    }
-    .second-section {
-      display: flex;
-      flex-wrap: wrap;
     }
   }
 </style>
