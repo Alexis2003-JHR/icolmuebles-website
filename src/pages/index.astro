@@ -28,12 +28,10 @@ import SecondSection from "../components/home/SecondSection.astro";
 
   <section><Carousel /></section>
 
-  <section class="section">
-    <div class="data-section">
-      <FirstSection />
-      <SecondSection />
-    </div>
-  </section>
+  <div class="data-section">
+    <FirstSection />
+    <SecondSection />
+  </div>
 </Layout>
 
 <script>
@@ -109,14 +107,8 @@ import SecondSection from "../components/home/SecondSection.astro";
     height: 100vh;
   }
 
-  .section {
-    height: 100vh;
-    width: 100%;
-  }
-
   .data-section {
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-wrap: wrap;
   }
