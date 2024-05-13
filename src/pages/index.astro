@@ -3,29 +3,8 @@ import LottieAnimation from "astro-integration-lottie/Lottie.astro";
 
 import Layout from "../layouts/Layout.astro";
 import Carousel from "../components/home/Carousel.astro";
-import HomeCard from "../components/home/HomeCard.astro";
-import MiddleSection from "../components/home/MiddleSection.astro";
-
-import Image1 from "/public/home/section/1.avif";
-import Image2 from "/public/home/section/2.avif";
-
-const contentMap = {
-  card1: {
-    title: "COMERCIAL",
-    text: "QUEREMOS QUE NUESTROS CLIENTES HABLEN POR NUESTRO TRABAJO",
-    btnText: "VER PROYECTOS",
-  },
-  card2: {
-    title: "RESIDENCIAL",
-    text: "AMUEBLA TUS ESPACIOS CON LOS MEJORES DISEÑOS Y LOS MEJORES MATERIALES",
-    btnText: "CONOCER MÁS",
-  },
-  middle: {
-    title: "Nuestros Proyectos",
-    text: "Puedes encontrar la mejor muebleria del mercado para tu proyecto residencial como para tu apartamento",
-    subText: "Empecemos!",
-  },
-};
+import FirstSection from "../components/home/FirstSection.astro";
+import SecondSection from "../components/home/SecondSection.astro";
 ---
 
 <Layout title="Home">
@@ -49,25 +28,10 @@ const contentMap = {
 
   <section><Carousel /></section>
 
-  <section class="second-section">
-    <HomeCard
-      imageCard={Image1.src}
-      title={contentMap.card1.title}
-      text={contentMap.card1.text}
-      btnText={contentMap.card1.btnText}
-    />
-    <MiddleSection
-      title={contentMap.middle.title}
-      text={contentMap.middle.text}
-      subText={contentMap.middle.subText}
-    />
-    <HomeCard
-      imageCard={Image2.src}
-      title={contentMap.card2.title}
-      text={contentMap.card2.text}
-      btnText={contentMap.card2.btnText}
-    />
-  </section>
+  <div class="data-section">
+    <FirstSection />
+    <SecondSection />
+  </div>
 </Layout>
 
 <script>
@@ -143,6 +107,12 @@ const contentMap = {
     height: 100vh;
   }
 
+  .data-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   @media screen and (max-width: 850px) {
     #intro-video {
       position: fixed;
@@ -150,10 +120,6 @@ const contentMap = {
       bottom: 0;
       height: 100vh;
       z-index: 9999;
-    }
-    .second-section {
-      display: flex;
-      flex-wrap: wrap;
     }
   }
 </style>

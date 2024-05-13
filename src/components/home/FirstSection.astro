@@ -1,0 +1,142 @@
+<div class="first-section">
+  <div class="info-section">
+    <div class="title">
+      <h3>Somos experiencia, <br /><span>somos calidad.</span></h3>
+    </div>
+    <div class="text">
+      <p>
+        Creamos soluciones empresariales y residenciales con la mejor calidad,
+        con el mejor servicio y con la mejor eficiencia. Conoce nuestros
+        asombrosos proyectos residenciales, descubre los magníficos proyectos
+        comerciales en los que hemos trabajado!
+      </p>
+    </div>
+  </div>
+  <div class="btn-section">
+    <button><a href="/proyectos">Ver proyectos</a></button>
+  </div>
+  <div class="arrow-section">
+    <img src="/home/arrow.png" alt="" class="arrow" />
+  </div>
+</div>
+
+<style>
+  .first-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 60vh;
+    padding: 40px 60px;
+  }
+
+  .info-section {
+    width: 60%;
+    height: fit-content;
+  }
+
+  .title h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 40px;
+    margin-top: 50px;
+  }
+
+  .title h3 span {
+    color: var(--yellow-own);
+  }
+
+  .first-section .text {
+    margin-top: 60px;
+    font-size: 25px;
+  }
+
+  .btn-section {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    width: 40%;
+  }
+
+  .btn-section button a {
+    text-decoration: none;
+    color: #6a6a6a;
+  }
+
+  .btn-section button {
+    border: none;
+    background-color: transparent;
+    border: 3px solid #6a6a6a;
+    padding: 10px 60px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    box-shadow: 0px 3px 6px #00000029;
+    text-shadow: 0px 3px 6px #00000029;
+  }
+
+  .btn-section button:hover {
+    border: 3px solid var(--yellow-own);
+    background-color: var(--yellow-own);
+    transition: 0.8s;
+    cursor: pointer;
+  }
+
+  .btn-section button:hover a {
+    color: var(--white-own);
+    transition: 0.8s;
+  }
+
+  .arrow-section {
+    position: relative;
+    display: flex;
+    align-items: start;
+    height: 50%;
+    width: 100%;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 40px;
+    left: 45%;
+  }
+
+  @media screen and (max-width: 1500px) {
+    .first-section {
+      height: 600px;
+    }
+  }
+
+  @media screen and (max-width: 1450px) {
+    .arrow {
+      left: 35%;
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    .arrow {
+      left: 20%;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .first-section {
+      height: 700px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .first-section {
+      padding: 20px;
+      height: 80vh;
+    }
+    .info-section {
+      width: 100%;
+    }
+    .btn-section {
+      margin-top: 40px;
+      width: 100%;
+    }
+    .arrow {
+      display: none;
+    }
+  }
+</style>
