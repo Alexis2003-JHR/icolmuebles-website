@@ -121,14 +121,14 @@ import image1 from "../../public/home/carousel/1.avif";
             </g>
           </svg>
         </div>
-        <h3 class="title">FELICIDADES!</h3>
-        <p class="label-title">GANASTE UN BONO POR:</p>
-        <h3 class="valor-text">300.000COP</h3>
-        <p class="label-valor">Para tu siguiente compra.</p>
+        <h3 class="title full-width">FELICIDADES!</h3>
+        <p class="label-title full-width">GANASTE UN BONO POR:</p>
+        <h3 class="valor-text full-width">300.000COP</h3>
+        <p class="label-valor full-width">Para tu siguiente compra.</p>
         <div class="btn-container">
           <a href="/proyectos">RECLAMAR</a>
         </div>
-        <p class="final-text">
+        <p class="final-text full-width">
           Te ofrecemos muebles de excelente calidad
         </p>
       </div>
@@ -170,6 +170,10 @@ import image1 from "../../public/home/carousel/1.avif";
     width: 60%;
     overflow: scroll;
   }
+  .full-width {
+    text-align: center;
+    width: 100%;
+  }
   .content-container {
     display: flex;
     justify-content: center;
@@ -180,6 +184,21 @@ import image1 from "../../public/home/carousel/1.avif";
   .logo {
     margin-top: 40px;
     width: 60%;
+  }
+  .cls-1 {
+    fill: none;
+    stroke: #1d1d1b;
+    stroke-miterlimit: 10;
+    stroke-width: 12.76px;
+  }
+
+  .cls-2,
+  .cls-3 {
+    stroke-width: 0px;
+  }
+
+  .cls-3 {
+    fill: #1d1d1b;
   }
   .title {
     font-family: "Montserrat", sans-serif;
