@@ -207,7 +207,7 @@ export function getStaticPaths() {
       params: { proyecto: "cumbrera" },
       props: {
         mainImage: "/portafolio/comercial/cumbrera/1.avif",
-        titulo: "PROYECTO CUMBRERA COLPATRIA CONSTRUCTORA LAS GALIAS",
+        titulo: "CUMBRERA COLPATRIA CONSTRUCTORA LAS GALIAS",
         ubicacion: `Atardeceres de Madelena Bogotá , Senderos de Madelena Bogotá, Maui Barranquilla, Bio Ibague, Lift 91 Ibague, Primavera 6-39 Bogotá, Natura Madrid , Altavista 2000 Cali, Centrik Park Bogotá.`,
         descripcion:
           "Puertas nivel nacional y zonas comunes constructora Colpatria Galias Cumbrera.",
@@ -487,13 +487,15 @@ const { mainImage, titulo, ubicacion, descripcion, arrayImg } = Astro.props;
     .presentation-container {
       flex-wrap: wrap;
     }
+    .head-content {
+      position: relative;
+    }
     .content {
       width: 100%;
-      height: 50vh;
+      height: fit-content;
       display: block;
     }
     .head-content {
-      position: none;
       width: 100%;
       padding-left: 20px;
     }
@@ -505,17 +507,17 @@ const { mainImage, titulo, ubicacion, descripcion, arrayImg } = Astro.props;
       font-size: 30px;
     }
     .location {
+      position: relative;
       font-size: 20px;
     }
-
+    .detail {
+      font-size: 20px;
+    }
     .description {
-      position: none;
+      position: relative;
+      margin: 20px 0px;
       width: 100%;
       padding-left: 20px;
-    }
-    .detail {
-      font-size: 25px;
-      position: none;
     }
     .designed-by-label {
       display: none;
@@ -524,7 +526,7 @@ const { mainImage, titulo, ubicacion, descripcion, arrayImg } = Astro.props;
       display: flex;
       align-items: center;
       width: 100%;
-      height: 50vh;
+      height: 80vh;
     }
     .img {
       width: 100%;
@@ -534,6 +536,12 @@ const { mainImage, titulo, ubicacion, descripcion, arrayImg } = Astro.props;
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+    .section {
+      height: fit-content;
+    }
+    .section-carousel {
+      height: 100%;
     }
   }
 </style>
