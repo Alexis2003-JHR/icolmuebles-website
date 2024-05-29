@@ -4,42 +4,56 @@ import ProyectSection from "../components/proyectos/ProyectSection.astro";
 import ResidencialCardProjects from "../components/proyectos/ResidencialCardProjects.astro";
 import ComercialCardProjects from "../components/proyectos/ComercialCardProjects.astro";
 
-import imgResidencial1 from "/public/proyectos/residencial/1.avif";
-import imgResidencial2 from "/public/proyectos/residencial/2.avif";
-import imgResidencial3 from "/public/proyectos/residencial/3.avif";
-import imgResidencial4 from "/public/proyectos/residencial/4.avif";
-import imgResidencial5 from "/public/proyectos/residencial/5.avif";
-
 const ResidencialData = [
   {
-    imageCard: imgResidencial1.src,
+    imageCard: "/proyectos/residencial/1.avif",
     title: "Closet",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque arcu vel maximus dapibus. Aliquam sagittis orci vel tristique accumsan.",
     cost: "$200.000",
+    additionalImg: [
+      "/proyectos/residencial/closet_central.avif",
+      "/proyectos/residencial/closet_I.avif"
+    ]
   },
   {
-    imageCard: imgResidencial2.src,
+    imageCard: "/proyectos/residencial/2.avif",
     title: "Cocina",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque arcu vel maximus dapibus. Aliquam sagittis orci vel tristique accumsan.",
     cost: "$200.000",
+    additionalImg: [
+      "/proyectos/residencial/closet_central.avif",
+      "/proyectos/residencial/closet_I.avif"
+    ]
   },
   {
-    imageCard: imgResidencial3.src,
+    imageCard: "/proyectos/residencial/3.avif",
     title: "Mueble Laundry",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque arcu vel maximus dapibus. Aliquam sagittis orci vel tristique accumsan.",
     cost: "$200.000",
+    additionalImg: [
+      "/proyectos/residencial/closet_central.avif",
+      "/proyectos/residencial/closet_I.avif"
+    ]
   },
   {
-    imageCard: imgResidencial4.src,
+    imageCard: "/proyectos/residencial/4.avif",
     title: "Lavamanos",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque arcu vel maximus dapibus. Aliquam sagittis orci vel tristique accumsan.",
     cost: "$200.000",
+    additionalImg: [
+      "/proyectos/residencial/closet_central.avif",
+      "/proyectos/residencial/closet_I.avif"
+    ]
   },
   {
-    imageCard: imgResidencial5.src,
+    imageCard: "/proyectos/residencial/5.avif",
     title: "Baño",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque arcu vel maximus dapibus. Aliquam sagittis orci vel tristique accumsan.",
     cost: "$200.000",
+    additionalImg: [
+      "/proyectos/residencial/closet_central.avif",
+      "/proyectos/residencial/closet_I.avif"
+    ]
   },
 ];
 ---

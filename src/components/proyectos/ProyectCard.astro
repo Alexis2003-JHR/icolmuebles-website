@@ -1,34 +1,81 @@
 ---
 export interface Props {
-  imageCard: any;
+  imageCard: string;
   title: string;
   text: string;
   cost: string;
+  additionalImgs: string[];
 }
 
-const { imageCard, title, text, cost } = Astro.props;
+const { imageCard, title, text, cost, additionalImgs } = Astro.props;
 ---
 
 <div class="card-container">
-  <img src={imageCard} alt="a" loading="lazy" />
+  <img src={imageCard} alt="Imagen Principal" class="carousel-image active" loading="lazy" />
+
+  {additionalImgs.map((imageSrc, index) => (
+    <img src={imageSrc} alt={`Imagen ${index + 1}`} class="carousel-image" loading="lazy" />
+  ))}
+
   <p class="title">{title}</p>
   <p class="cost">{cost}</p>
   <p class="text">{text}</p>
 </div>
 
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.card-container');
+    if (container) {
+      let currentImageIndex = 0;
+      let interval;
+      const images = container.querySelectorAll('.carousel-image');
+
+      const nextImage = () => {
+        images[currentImageIndex].classList.remove('active');
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        images[currentImageIndex].classList.add('active');
+      };
+
+      container.addEventListener('mouseover', () => {
+        console.log("entra");
+        interval = setInterval(nextImage, 2000);
+      });
+
+      container.addEventListener('mouseout', () => {
+        clearInterval(interval);
+        images.forEach(img => img.classList.remove('active'));
+        images[0].classList.add('active');
+      });
+    }
+  });
+</script>
 <style>
-  .card-container {
+ /* Estilos para el contenedor de la tarjeta */
+ .card-container {
     display: grid;
     align-items: center;
     break-inside: avoid;
     margin-bottom: 30px;
     width: 90%;
   }
+
+  /* Estilos para las imágenes del carousel */
   .card-container img {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
+    display: none;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Transición suave de la opacidad */
   }
+  .card-container img.active {
+    display: block;
+    opacity: 1;
+  }
+
+  /* Estilos para el contenido de la tarjeta */
   .card-container p {
     margin: 0px;
   }
