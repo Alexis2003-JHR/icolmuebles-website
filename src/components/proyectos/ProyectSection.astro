@@ -18,8 +18,9 @@ const { data } = Astro.props;
 
 <div class="main-container">
   {
-    data.map((item) => (
+    data.map((item, index) => (
       <ProyectItem
+        id={`unique-${index}`}
         imageCard={item.imageCard}
         title={item.title}
         text={item.text}

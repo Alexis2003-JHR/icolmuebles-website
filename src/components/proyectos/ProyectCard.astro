@@ -1,5 +1,6 @@
 ---
 export interface Props {
+  id: string;
   imageCard: string;
   title: string;
   text: string;
@@ -7,28 +8,30 @@ export interface Props {
   additionalImgs: string[];
 }
 
-const { imageCard, title, text, cost, additionalImgs } = Astro.props;
+const { id, imageCard, title, text, cost, additionalImgs } = Astro.props;
 ---
 
-<div class="card-container">
-  <img src={imageCard} alt="Imagen Principal" class="carousel-image active" loading="lazy" />
+<div class={`card-container ${id}`}>
+  <div class="img-container">
+    <img src={imageCard} alt="Imagen Principal" class={`carousel-image active ${id} main-img`} data-id={id} loading="lazy" />
 
-  {additionalImgs.map((imageSrc, index) => (
-    <img src={imageSrc} alt={`Imagen ${index + 1}`} class="carousel-image" loading="lazy" />
-  ))}
+    {additionalImgs.map((imageSrc, index) => (
+      <img src={imageSrc} alt={`Imagen ${index + 1}`} class={`carousel-image ${id}`} data-id={id} loading="lazy" />
+    ))}
+  </div>
 
   <p class="title">{title}</p>
   <p class="cost">{cost}</p>
   <p class="text">{text}</p>
 </div>
 
-<script type="module">
+<script type="module" define:vars={{ id }}>
   document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.card-container');
+    const container = document.querySelector(`.${id}`);
     if (container) {
       let currentImageIndex = 0;
       let interval;
-      const images = container.querySelectorAll('.carousel-image');
+      const images = container.querySelectorAll(`.carousel-image.${id}`);
 
       const nextImage = () => {
         images[currentImageIndex].classList.remove('active');
@@ -36,17 +39,26 @@ const { imageCard, title, text, cost, additionalImgs } = Astro.props;
         images[currentImageIndex].classList.add('active');
       };
 
-      container.addEventListener('mouseover', () => {
-        console.log("entra");
-        interval = setInterval(nextImage, 2000);
+      document.addEventListener('mouseover', (event) => {
+        if (event.target.closest(`.card-container.${id}`)) {
+          // Iniciar el carrusel solo si el mouseover ocurre dentro de .card-container
+          if (!interval) {
+            nextImage(); // Ejecutar una vez para iniciar el carrusel y evitar el retraso inicial
+            interval = setInterval(nextImage, 2000);
+          }
+        }
       });
 
-      container.addEventListener('mouseout', () => {
-        clearInterval(interval);
-        images.forEach(img => img.classList.remove('active'));
-        images[0].classList.add('active');
-      });
-    }
+    document.addEventListener('mouseout', (event) => {
+      if (event.target.closest(`.card-container.${id}`)) {
+          // Detener el carrusel solo si el mouseout ocurre dentro de .card-container
+          clearInterval(interval);
+          interval = null; // Resetear el intervalo para evitar múltiples instancias
+          images.forEach(img => img.classList.remove('active'));
+          images[0].classList.add('active'); // Vuelve a la imagen original
+        }
+    });
+  }
   });
 </script>
 <style>
@@ -59,19 +71,32 @@ const { imageCard, title, text, cost, additionalImgs } = Astro.props;
     width: 90%;
   }
 
+  .img-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
   /* Estilos para las imágenes del carousel */
   .card-container img {
+    position: absolute;
     width: 100%;
     height: auto;
     margin-bottom: 10px;
-    display: none;
     top: 0;
     left: 0;
     opacity: 0;
     transition: opacity 1s ease-in-out; /* Transición suave de la opacidad */
   }
+
   .card-container img.active {
-    display: block;
+    opacity: 1;
+    z-index: -100;
+  }
+
+  .main-img {
+    position: relative !important;
     opacity: 1;
   }
 
