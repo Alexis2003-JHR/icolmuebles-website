@@ -1,0 +1,73 @@
+---
+import Carousel from "../home/Carousel.astro";
+
+const dataCarousel = {
+  height: 75,
+  width: 80,
+  images: [
+    "/nosotros/planta/1.jpeg",
+    "/nosotros/planta/2.jpeg",
+    "/nosotros/planta/3.jpeg",
+    "/nosotros/planta/4.jpeg",
+    "/nosotros/planta/5.jpeg",
+    "/nosotros/planta/6.jpeg",
+    "/nosotros/planta/7.jpeg",
+    "/nosotros/planta/8.jpeg",
+  ],
+};
+---
+
+<div class="main-container">
+  <div class="title">
+    <h3>NUESTRA PLANTA</h3>
+  </div>
+
+  <div class="carousel-container-planta">
+    <Carousel
+      heightSize={dataCarousel.height}
+      widthSize={dataCarousel.width}
+      images={dataCarousel.images}
+    />
+  </div>
+
+  <div class="description">
+    <p>
+      Nuestra planta se compone de 3 plantas la primera encargada del aglomerado
+      la segunda planta se distribuye en oficina y fabricación de puertas y la
+      tercera planta tratamiento de polución fabricación de carpintería maciza
+      en madera y ornamentación.
+    </p>
+  </div>
+</div>
+
+<style>
+  .main-container {
+    max-width: 100%; /* Asegura que el contenedor principal no sobrepase el ancho de la página */
+  }
+
+  .title h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    margin-left: 5%;
+    max-width: 90%; /* Ajusta este valor según tus necesidades */
+  }
+
+  .carousel-container-planta {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    max-width: 100%; /* Ajusta este valor según tus necesidades */
+  }
+
+  .description {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
+  }
+  .description p {
+    font-size: 25px;
+    text-align: center;
+    max-width: 80%; /* Ajusta este valor según tus necesidades */
+  }
+</style>

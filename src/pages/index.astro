@@ -5,6 +5,19 @@ import Layout from "../layouts/Layout.astro";
 import Carousel from "../components/home/Carousel.astro";
 import FirstSection from "../components/home/FirstSection.astro";
 import SecondSection from "../components/home/SecondSection.astro";
+
+const dataCarousel = {
+  height: 100,
+  width: 100,
+  images: [
+    "/home/carousel/1.avif",
+    "/home/carousel/2.avif",
+    "/home/carousel/3.avif",
+    "/home/carousel/4.avif",
+    "/home/carousel/5.avif",
+    "/home/carousel/6.avif",
+  ],
+};
 ---
 
 <Layout title="Home">
@@ -26,7 +39,13 @@ import SecondSection from "../components/home/SecondSection.astro";
     />
   </div>
 
-  <section><Carousel /></section>
+  <section>
+    <Carousel
+      heightSize={dataCarousel.height}
+      widthSize={dataCarousel.width}
+      images={dataCarousel.images}
+    />
+  </section>
 
   <div class="data-section">
     <FirstSection />
