@@ -79,8 +79,38 @@ const { heightSize, widthSize, images } = Astro.props;
   .carousel-container {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-padding: 50%;
+    /* Estilos para Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.7) transparent;
+  }
+
+  /* Estilos para Chrome, Safari y otros navegadores basados en Webkit */
+  .carousel-container::-webkit-scrollbar {
+    height: 10px;
+    background: transparent; /* Color del track */
+  }
+
+  .carousel-container::-webkit-scrollbar-thumb {
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.7
+    ); /* Color de la barra de desplazamiento */
+    border-radius: 20px; /* Radio de la esquina de la barra de desplazamiento */
+    border: 3px solid transparent; /* Borde de la barra de desplazamiento */
+  }
+
+  .carousel-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(
+      100,
+      100,
+      100,
+      0.7
+    ); /* Cambia el color de la barra de desplazamiento al pasar el mouse */
   }
   .titular-container {
     display: flex;
