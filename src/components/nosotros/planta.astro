@@ -24,7 +24,7 @@ const dataCarousel = {
 
   <div class="carousel-container-planta">
     <div class="label">
-      <h3>Desliza y descubre</h3>
+      <h3>Arrastra y descubre</h3>
     </div>
     <Carousel
       heightSize={dataCarousel.height}
@@ -84,6 +84,7 @@ const dataCarousel = {
     background: var(--white-own);
     animation: aparecer-y-desvanecer 2s ease-in-out;
     opacity: 0;
+    z-index: -1;
   }
   .label h3 {
     font-size: 40px;
@@ -93,12 +94,15 @@ const dataCarousel = {
   @keyframes aparecer-y-desvanecer {
     0% {
       opacity: 0;
+      z-index: 1;
     }
     50% {
       opacity: 1;
+      z-index: 1;
     }
     100% {
       opacity: 0;
+      z-index: 1;
     }
   }
 </style>
