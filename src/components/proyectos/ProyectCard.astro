@@ -4,11 +4,12 @@ export interface Props {
   imageCard: string;
   title: string;
   text: string;
+  notes: string[];
   cost: string;
   additionalImgs: string[];
 }
 
-const { id, imageCard, title, text, cost, additionalImgs } = Astro.props;
+const { id, imageCard, title, text, notes, cost, additionalImgs } = Astro.props;
 ---
 
 <div class={`card-container ${id}`}>
@@ -35,8 +36,9 @@ const { id, imageCard, title, text, cost, additionalImgs } = Astro.props;
   </div>
 
   <p class="title">{title}</p>
-  <p class="cost">{cost}</p>
   <p class="text">{text}</p>
+  {notes.map((note, index) => <p class="note">{note}</p>)}
+  <p class="cost">{cost}</p>
 </div>
 
 <script type="module" define:vars={{ id }}>
@@ -126,7 +128,12 @@ const { id, imageCard, title, text, cost, additionalImgs } = Astro.props;
     font-size: 30px;
   }
   .text {
-    font-size: 20px;
+    font-size: 22px;
     color: #000000b3;
+  }
+  .note {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 5px 0px !important;
   }
 </style>
